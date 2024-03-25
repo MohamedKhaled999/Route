@@ -1,0 +1,546 @@
+body {
+    margin: 0;
+    font-family: "Alegreya Sans", sans-serif;
+
+}
+
+
+.home {
+    color: white;
+    background-color: blue;
+
+    background-image: url(../images/drew-coffman-1872.jpg);
+    background-position: center;
+    height: 100vh;
+    background-size: cover;
+    padding: 1px;
+
+
+
+
+}
+
+.home .nav-bar {
+    background-color: black;
+    border: hwb(36 19% 79%) solid 3px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1% 15% 0;
+    opacity: 0.8;
+
+}
+
+.home .nav-bar .logo {
+    width: 15%;
+    float: left;
+}
+
+.home .nav-bar img {
+    display: block;
+    width: 100%;
+
+
+}
+
+.home .nav-bar .links {
+
+    float: right;
+
+}
+
+.home .nav-bar .links li {
+
+    display: inline-block;
+    padding: 0 5px;
+
+
+
+
+}
+
+.home .nav-bar .links li a {
+
+
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+
+
+}
+
+li:hover {
+    background-color: #D9D9D9;
+}
+
+
+.home .context {
+    margin: auto;
+    /* background-color: #8E7754; */
+    text-align: center;
+    padding: 100px 0;
+    margin-top: 100px;
+    width: fit-content;
+
+
+}
+
+.home .context button {
+    padding: 15px 26px;
+    border-radius: 5px;
+    border-width: 3px;
+    color: white;
+    margin-top: 10px;
+    font-weight: bolder;
+
+}
+
+.home .context .learn-btn {
+    border-color: #8E7754;
+    background-color: #8E7754;
+    margin-right: 10px;
+
+}
+
+.home .context .contact-btn {
+    border-color: white;
+    background-color: transparent;
+
+}
+
+.home .context h1 {
+    font-family: "Alegreya", serif;
+    font-size: 76px;
+    font-weight: 400;
+
+    margin: 0 0 16px 0;
+}
+
+.home .context .context-head {
+
+    font-size: 22px;
+    padding-top: 45px;
+    margin-bottom: 10px;
+
+
+}
+
+.home .context p {
+    font-size: 24px;
+    margin: 10px auto 20px;
+    width: 83%;
+    line-height: 1.86em;
+
+
+
+}
+
+.about {
+    /* background-color: tomato; */
+
+    margin: 90px 0;
+    padding: 0 4%;
+}
+
+.about .about-img {
+    /* background-color: red; */
+    width: 40%;
+    padding: 0 7%;
+
+    display: inline-block;
+    vertical-align: bottom;
+
+
+
+}
+
+.about .about-img img {
+
+    width: 100%;
+    display: block;
+
+}
+
+
+.about .about-context {
+    /* background-color: blue; */
+    width: 40%;
+    display: inline-block;
+    /* vertical-align: top; */
+    padding-bottom: 28px;
+}
+
+.about .about-context .list .row {
+    /* background-color: brown; */
+
+}
+
+
+.about .about-context .list .row .icon {
+    display: inline-block;
+    /* background-color: rgb(255, 240, 248); */
+    vertical-align: middle;
+    width: 10%;
+    border: 2px solid #D9D9D9;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+
+.about .about-context .list .row .icon img {
+
+    display: block;
+
+    width: 100%;
+
+
+}
+
+.about .about-context .list .row .row-context {
+    display: inline-block;
+    /* background-color: cadetblue; */
+}
+
+.about .about-context p {
+    color: rgb(104, 104, 104);
+}
+
+.about .about-context h2 {
+    /* background-color: bisque; */
+    font-family: "Alegreya", serif;
+    font-weight: 400;
+    font-size: 32px;
+
+
+}
+
+.location {
+    background-color: #F8F8F8;
+    text-align: center;
+    padding: 62px 0;
+}
+
+.location .location-context h2 {
+    font-family: "Alegreya", serif;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.location p {
+    /* color: rgb(104, 104, 104); */
+    font-size: 17px;
+    color: #686868;
+    line-height: 32px;
+
+}
+
+.location .location-context .first {
+
+    /* background-color: brown; */
+    padding-bottom: 20px;
+
+}
+
+.location .location-context .second {
+    margin-bottom: 0;
+    /* background-color: brown; */
+
+
+}
+
+.location .location-context {
+    width: 40%;
+    /* background-color: blueviolet; */
+    display: inline-block;
+    margin-right: 54px;
+    vertical-align: top;
+    padding-top: 5%;
+    text-align: left;
+
+}
+
+.location .location-img {
+    width: 40%;
+    display: inline-block;
+}
+
+.location .location-img img {
+    display: block;
+    width: 100%;
+    background-color: blue;
+}
+
+.baking {
+    text-align: center;
+    margin-bottom: 62px;
+    padding-left: 3%;
+    padding-top: 44px;
+
+}
+
+.baking .head {
+    padding-bottom: 60px;
+
+}
+
+.baking .head h3 {
+    font-family: "Alegreya", serif;
+    font-weight: 400;
+    font-size: 32px;
+
+}
+
+.baking p {
+    color: #888;
+    line-height: 32px;
+}
+
+.baking .baking-item {
+    /* background-color: #8E7754; */
+    width: 30%;
+    float: left;
+    padding-right: 3%;
+}
+
+.baking .baking-item .baking-item-img {
+
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.baking .baking-item .baking-item-img img {
+
+    display: block;
+    width: 100%;
+}
+
+.baking .baking-item h4 {
+    font-family: "Alegreya", serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+
+.contact {
+    background-color: #f8f8f8;
+    padding: 62px 0;
+}
+
+.contact .contact-info {
+    width: 40%;
+    /* background-color: yellowgreen; */
+    float: left;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.contact .contact-info .contact-context {}
+
+.contact .contact-info .contact-context h2 {
+    font-family: "Alegreya", serif;
+    font-weight: 400;
+    font-size: 26px;
+    margin-top: 0;
+}
+
+.contact .contact-info .contact-context p {
+    font-size: 17px;
+    color: #888;
+    line-height: 32px;
+}
+
+.contact .contact-info .contact-list {}
+
+.contact .contact-info .contact-list .row {
+    /* background-color: brown; */
+    padding: 5px;
+
+
+}
+
+
+.contact .contact-info .contact-list .row .icon {
+    display: inline-block;
+    background-color: #8E7754;
+
+    width: 10%;
+    vertical-align: middle;
+    border: 2px solid transparent;
+    border-radius: 50%;
+
+}
+
+.contact .contact-info .contact-list .row .icon img {
+    display: block;
+    width: 100%;
+
+
+}
+
+.contact .contact-info .contact-list .row .row-context {
+    display: inline-block;
+    /* background-color: cadetblue; */
+    margin: 1px 4px;
+    color: #686868;
+}
+
+.contact .contact-map {
+    background-color: cadetblue;
+    width: 40%;
+    height: 500px;
+    float: left;
+    border: 0;
+}
+
+.contact .contact-map iframe {
+    height: 500px;
+    display: block;
+    width: 100%;
+    border: 2px solid black;
+
+}
+
+.border-bottom {
+    border-bottom: solid 2px;
+    color: #888;
+
+}
+
+.info {
+    background-color: #403D38;
+    padding: 18px 0;
+
+}
+
+.info .in {
+    width: fit-content;
+    margin: auto;
+}
+
+
+.info p {
+    font-size: 17px;
+    color: #888;
+    line-height: 32px;
+
+}
+
+.info h4 {
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    line-height: 25px;
+
+}
+
+.info .about-us {
+    float: left;
+    width: 45vh;
+    padding-right: 2vh;
+}
+
+.info .special {
+    float: left;
+    width: 45vh;
+    padding-right: 2vh;
+}
+
+.info .hours {
+    float: left;
+    width: 45vh;
+    padding-right: 2vh;
+}
+
+.info .info-contact {
+    float: left;
+    width: 45vh;
+
+
+
+}
+
+.info .info-contact .image {
+
+    background-image: url(../images/contact-details-map.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.info .info-contact .row {
+    /* background-color: brown; */
+    padding: 5px;
+
+
+}
+
+
+.info .info-contact .row .icon {
+    display: inline-block;
+    /* background-color: blue; */
+    width: 10%;
+    vertical-align: top;
+
+
+}
+
+.info .info-contact .row .icon img {
+    display: block;
+    width: 100%;
+
+
+}
+
+.info .info-contact .row .row-context {
+    display: inline-block;
+    /* background-color: cadetblue; */
+}
+
+.info .info-contact .row .row-context p {
+    display: inline-block;
+    /* background-color: cadetblue; */
+    margin: 0;
+}
+
+.footer {
+    background-color: #353330;
+}
+
+.footer .in {
+    padding: 10px;
+    width: 40%;
+
+    margin: auto;
+    text-align: center;
+}
+
+.footer .logo {
+    width: 100%;
+
+}
+
+.footer p {
+    color: #777;
+}
+
+.footer .logo img {
+    display: block;
+    width: 100%;
+}
+
+.footer .in .social input {
+    border: solid 2px transparent;
+    border-radius: 50%;
+    margin-left: 15px;
+    background-color: #484540;
+    width: 10%;
+
+}

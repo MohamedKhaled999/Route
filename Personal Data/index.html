@@ -1,0 +1,131 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Data</title>
+</head>
+
+<body style="background-color:rgba(245, 222, 179, 0.412);">
+    <fieldset style="background-color: rgba(245, 222, 179, 0.438);">
+        <legend
+            style="background-color:rgb(212, 238, 9) ; box-shadow: 2px 5px #88888837;color: white; font-size: 12px;">
+            <h1>Prosonal Data</h1>
+        </legend>
+        <br />
+        <form>
+
+            <fieldset style="background-color: rgba(0, 255, 255, 0.749); ">
+                <legend style="background-color:rgb(200, 222, 27) ; box-shadow: 2px 5px #88888837;color: white;">Your
+                    Name</legend>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label for="fName">Frist Name :</label></td>
+                            <td><input type="text" id="fName" name="firstName" placeholder="ex: Mohamed" minlength="3"
+                                    required>*
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td><label for="sName">Seconed Name :</label></td>
+                            <td><input type="text" id="sName" name="seconedName" placeholder="ex: Khaled" minlength="3"
+                                    required>*
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+            <br />
+            <br />
+
+            <table>
+                <tbody>
+
+
+
+                    <tr>
+                        <td><label for="phone">Your Phone :</label></td>
+                        <td><input type="tel" id="phone" name="numPhone" placeholder="ex: Khaled" required>*</td>
+
+                    </tr>
+                    <tr>
+                        <td><label for="email">Your Email :</label></td>
+                        <td><input type="email" id="email" name="email" placeholder="ex: hamada@gmail.com" required>*
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><label for="age">Your Age :</label></td>
+                        <td><input type="number" id="age" name="age" placeholder="ex: 24" min="18" max="80" required>*
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Enter password :</label></td>
+                        <td><input type="password" id="password" name="password" autocomplete="off" minlength="8"
+                                required>*</td>
+                    </tr>
+                    <tr>
+                        <td><label for="rePassword"> Re-password :</label></td>
+                        <td><input type="password" id="rePassword" name="rePassword" autocomplete="off" minlength="8"
+                                required>*
+                        </td>
+                    </tr>
+
+
+
+                </tbody>
+
+
+            </table>
+            <br />
+            <input type="radio" name="gender" id="male" value="Male" checked>
+            <label for="male">Male</label>
+            <br />
+            <input type="radio" name="gender" id="female" value="Female">
+            <label for="female">Female</label>
+            <br /><br /><br />
+
+
+            <input type="checkbox" name="level" id="student" value="Student">
+            <label for="student">Student</label>
+            <br />
+
+            <input type="checkbox" name="level" id="graduate" value="Graduate" checked>
+            <label for="graduate">Graduate</label>
+
+
+            <br><br><br>
+            <label for="salary">Enter Salary</label>
+            <select value="salary" required id="salary">
+                <optgroup label="More than 10k">
+                    <option value="10-15" selected>10-15</option>
+                    <option value="15-20">15-20</option>
+                    <option value="20-30">20-30</option>
+                </optgroup>
+                <optgroup label="less than 10k">
+                    <option value="7-10">7-10</option>
+                    <option value="5-7">5-7</option>
+                    <option value="3-5">3-5</option>
+                </optgroup>
+            </select>
+            <br><br>
+
+            <input type="image" src="images/submit-button.png" alt="submit button " width="64px">
+
+            <button border="0" style="background-color: transparent; border: transparent;">
+
+                <img src="images/submit-button.png" alt="submit button " width="64px">
+
+            </button>
+
+        </form>
+    </fieldset>
+
+
+
+</body>
+
+</html>

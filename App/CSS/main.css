@@ -1,0 +1,15 @@
+.container {
+    background: tomato;
+    height: 300px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.container .inner {
+    background: yellowgreen;
+    margin: 2px;
+    width: 20vh;
+    float: left;
+
+    height: 300px;
+}
