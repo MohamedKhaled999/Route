@@ -1,0 +1,32 @@
+ div {
+     height: 300px;
+     width: 500px;
+ }
+
+ .one {
+     background-color: aqua;
+ }
+
+ .one h2 {
+     background-color: blue;
+     position: sticky;
+     bottom: 100px;
+     left: 0;
+ }
+
+ .two {
+
+     background-color: yellow;
+
+
+
+ }
+
+ .three {
+     background-color: violet;
+ }
+
+
+ body {
+     height: max-content;
+ }

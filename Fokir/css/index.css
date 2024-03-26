@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+}
+
+.home {
+    color: white;
+
+
+    background-image: url(../images/hero\ img.jpg);
+    background-position: center;
+    height: 100vh;
+    background-size: cover;
+
+
+
+
+
+}
+
+.home .nav-bar {
+
+    border: hwb(36 19% 79%) solid 3px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 20px 0;
+
+
+}
+
+.home .nav-bar .logo {
+    width: 15%;
+    float: left;
+}
+
+.home .nav-bar .logo a {
+    display: block;
+    padding-top: 15px;
+}
+
+.home .nav-bar a {
+    color: red;
+
+    text-decoration: none;
+
+}
+
+.home .nav-bar .links {
+
+    float: right;
+
+}
+
+.home .nav-bar .links li {
+
+    display: inline-block;
+    padding: 0 5px;
+
+
+
+
+}
+
+.home .nav-bar .links li a {
+
+
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+
+
+}
+
+.home .nav-bar .links li a:hover {
+    color: red;
+}
+
+.home .context {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+
+}
+
+.home .context h4 {
+    animation: control-whith 4s 2s infinite ease-in-out;
+    overflow: hidden;
+    border-right: solid white 3px;
+    width: fit-content;
+    padding: 0 10px 0 0;
+    white-space-collapse: collapse;
+    text-wrap: wrap;
+
+}
+
+.clear-fix {
+    clear: both;
+}
