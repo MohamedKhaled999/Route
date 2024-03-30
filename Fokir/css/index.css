@@ -18,8 +18,12 @@ h4,
 h5,
 h6 {
     font-family: "Source Sans 3", sans-serif;
-    color: black;
+    color: #333;
     line-height: 1.1;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .home {
@@ -178,12 +182,58 @@ h6 {
 
     position: relative;
     transform: translate(24px, 24px);
+    border-radius: 15px;
+    overflow: hidden;
 
 }
 
+.about .container .photo-context .box .photo .photo-cover {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    transform: translateY(100%);
+    transition: all .5s ease 0s;
+
+}
+
+.about .container .photo-context .box .photo:hover .photo-cover {
+    transform: translateY(0);
+}
+
+
+
+.about .container .photo-context .box .photo .photo-cover .list {
+
+    position: absolute;
+    top: 48%;
+    left: 30%;
+
+}
+
+.about .container .photo-context .box .photo li {
+    float: left;
+    margin-inline: 10px;
+}
+
+.about .container .photo-context .box .photo li i {
+    font-size: 16px;
+    color: white;
+}
+
+
+.about .container .photo-context .box .photo li i:hover {
+
+    color: #fe0033;
+}
+
+
 .about .container .photo-context .box img {
     border: solid 1px transparent;
-    border-radius: 15px;
+
     display: block;
     width: 100%;
 }
@@ -210,8 +260,9 @@ h6 {
     height: 100%;
     background-color: #ff305b;
     position: absolute;
-    top: 1px;
+
     left: 0px;
+    bottom: 1px;
 }
 
 .about .container .about-context .head p {
@@ -228,14 +279,22 @@ h6 {
     list-style: none;
 }
 
-.about .container .about-context .footer .btns button {
+.about .container .about-context .footer .btns a {
     background-color: #ff305b;
 
     border-radius: 5px;
     margin-right: 15px;
     padding: 10px 24px;
     color: white;
+    border: none;
+    text-decoration: none;
+
+}
+
+.about .container .about-context .footer .btns a:hover {
+    background-color: #fe0033;
     text-decoration: underline;
+
 }
 
 
@@ -260,12 +319,46 @@ i {
     font-size: 40px;
     font-weight: 800;
     line-height: 30px;
-    margin-bottom: 40px;
+    width: fit-content;
+    margin: 0 auto 30px;
+    position: relative;
+    padding-bottom: 30px;
 
 }
 
+
+.services .title h2::before {
+    content: '';
+    position: absolute;
+    background-color: #ff305b;
+
+    height: 2px;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+
+}
+
+.services .title h2::after {
+    content: '';
+    position: absolute;
+    border-block: #ff305b solid 1px;
+    padding: 5px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+
+
+
+}
+
+
 .services .container {
-    width: 70%;
+    width: 80%;
     margin: auto;
 
 
@@ -289,7 +382,7 @@ i {
 
 .services .container .item:hover {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
 
 }
@@ -298,6 +391,586 @@ i {
     transform: scale(1.1);
 
 }
+
+
+.portfolio {
+    padding-block: 40px;
+}
+
+.portfolio .container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.portfolio .container .title h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+
+}
+
+.portfolio .container .title h2::before {
+    content: '';
+    position: absolute;
+    background-color: #ff305b;
+
+    height: 2px;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+
+}
+
+.portfolio .container .title h2::after {
+    content: '';
+    position: absolute;
+    border-block: #ff305b solid 1px;
+    padding: 5px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+
+}
+
+
+.portfolio .container .categories button {
+    font-size: 16px;
+    background-color: transparent;
+    border: 0;
+    color: #333333;
+    margin: 30px 10px 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.portfolio .container .categories button:active {
+    color: #ff305b;
+
+}
+
+.portfolio .container .all-photos .item {
+    width: 30%;
+    float: left;
+    margin: 1.5%;
+    position: relative;
+
+}
+
+.portfolio .container .all-photos .cover {
+
+    background-color: black;
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.4s;
+
+
+}
+
+.portfolio .container .all-photos .cover i {
+    position: absolute;
+    margin: 0;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+
+}
+
+.portfolio .container .all-photos .item:hover .cover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.portfolio .container .all-photos .photo img {
+    width: 100%;
+    display: block;
+
+}
+
+.counters {
+    padding: 40px;
+    background-color: #f1f1f1;
+}
+
+.counters .container {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.counters .container .item {
+    float: left;
+    padding-block: 20px;
+    width: 25%;
+
+}
+
+.counters .container .item h3 {
+    font-size: 26px;
+    font-weight: 800;
+    padding-bottom: 10px;
+
+}
+
+.counters .container .item h5 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #555555;
+
+}
+
+.testimonial {
+    padding-block: 40px;
+}
+
+.testimonial .title h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 30px;
+    padding-bottom: 30px;
+
+    position: relative;
+    width: fit-content;
+    margin: 0 auto 40px;
+
+}
+
+.testimonial .title h2::before {
+    content: '';
+    position: absolute;
+    background-color: #ff305b;
+
+    height: 2px;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+
+}
+
+.testimonial .title h2::after {
+    content: '';
+    position: absolute;
+    border-block: #ff305b solid 1px;
+    padding: 5px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+
+}
+
+
+.testimonial .container {
+    width: 43%;
+    margin: auto;
+    padding: 40px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.testimonial .container::before {
+    content: '';
+    width: 60%;
+    background-color: #ff305b;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: rotate(-45deg) translate(-15%, -90%);
+    z-index: 1;
+
+
+}
+
+
+.testimonial .container .photo {
+    width: 18%;
+    float: left;
+    margin-block: 12px;
+
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+
+}
+
+.testimonial .container .photo img {
+    width: 100%;
+
+    display: block;
+}
+
+.testimonial .container .content {
+    width: 82%;
+    float: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.testimonial .container .content h3 {
+    font-weight: 600;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.testimonial .container .content h4 {
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.testimonial .container .content h4 i {
+    color: #777777;
+    font-size: 15px;
+}
+
+.testimonial .container .content p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonial .container .content ul {
+    margin-bottom: 15px;
+}
+
+.testimonial .container .content li {
+    display: block;
+    float: left;
+}
+
+.testimonial .container .content li i {
+    font-size: 15px;
+    color: #f1c30d;
+}
+
+.testimonial .btns {
+    text-align: center;
+}
+
+.testimonial button {
+    background-color: #ff305b;
+    border: solid #ff305b 1px;
+}
+
+.testimonial .btns .one {
+
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.testimonial .btns .two {
+    padding: 4px 4px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+
+.blog {
+    background-color: #f1f1f1;
+    padding: 40px;
+
+}
+
+.blog .title {
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.blog .title h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 30px;
+    padding-bottom: 30px;
+
+    position: relative;
+    width: fit-content;
+    margin: 0 auto 40px;
+
+}
+
+.blog .title h2::before {
+    content: '';
+    position: absolute;
+    background-color: #ff305b;
+
+    height: 2px;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+
+}
+
+.blog .title h2::after {
+    content: '';
+    position: absolute;
+    border-block: #ff305b solid 1px;
+    padding: 5px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+
+}
+
+.blog .contain {
+    width: 83%;
+    margin: auto;
+
+}
+
+.blog .item {
+    background-color: white;
+    float: left;
+    width: 30%;
+    margin: 1.6%;
+    height: 75%;
+}
+
+.blog .item .media {}
+
+.blog .item .media img,
+iframe {
+    display: block;
+    width: 100%;
+    height: 45%;
+
+}
+
+
+.blog .item .content {
+    padding: 20px;
+}
+
+.blog .item .content p {
+    margin-bottom: 10px;
+}
+
+.blog .item .content h3 {
+    margin-bottom: 10px;
+}
+
+.blog .item .content h3 a {
+
+    color: #333;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    text-decoration: none;
+
+}
+
+.blog .item .content .more {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #555555;
+
+
+}
+
+.blog .item .content .more i {
+    font-size: 18px;
+    color: #555555;
+}
+
+.blog .item .content a:hover,
+.blog .item .content a:hover i {
+    color: #ff305b;
+}
+
+.contact {
+    padding: 40px;
+}
+
+.contact .container {
+    width: 50%;
+    margin: auto;
+}
+
+
+.contact .title {
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.contact .title h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 30px;
+    padding-bottom: 30px;
+
+    position: relative;
+    width: fit-content;
+    margin: 0 auto 40px;
+
+}
+
+.contact .title h2::before {
+    content: '';
+    position: absolute;
+    background-color: #ff305b;
+
+    height: 2px;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+
+}
+
+.contact .title h2::after {
+    content: '';
+    position: absolute;
+    border-block: #ff305b solid 1px;
+    padding: 5px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+
+}
+
+
+.contact .form .one {
+    float: left;
+    width: 49%;
+    margin-bottom: 20px;
+
+}
+
+.contact .form .two {
+    float: right;
+    width: 49%;
+    margin-bottom: 20px;
+
+
+}
+
+.contact label {
+    color: #a94442;
+}
+
+.contact .form input,
+textarea {
+    color: black;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding-block: 5px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: #777777 2px solid;
+
+}
+
+.contact .form .message {
+    margin-block: 20px;
+}
+
+.contact .form button {
+    background-color: #ff305b;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px
+}
+
+.contact form button:hover {
+    background-color: #EC2403;
+}
+
+.contact .form input:focus,
+.contact .form textarea:focus {
+    border: solid 1px #ff305b;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .075);
+
+}
+
+.bottom-footer {
+    padding: 40px;
+    background-color: #333333;
+    text-align: center;
+}
+
+.bottom-footer .container {
+    width: 80%;
+
+    margin: auto;
+}
+
+.bottom-footer .list {
+    width: fit-content;
+    margin: auto;
+}
+
+.bottom-footer .container li {
+    float: left;
+    margin-inline: 10px;
+}
+
+.bottom-footer .container li i {
+    font-size: 16px;
+    color: white;
+}
+
+.bottom-footer .container li i:hover {
+
+    color: #fe0033;
+}
+
+.bottom-footer .container p {
+    font-size: 16px;
+    color: white;
+}
+
+.bottom-footer .container a {
+
+    color: #ff305b;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .clear-fix {
     clear: both;
