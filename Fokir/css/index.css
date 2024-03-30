@@ -139,15 +139,130 @@ ul {
     margin-bottom: 10px;
 }
 
+@keyframes border-control {
+    0% {
+        padding-right: 125px;
+    }
+
+    20% {
+        padding-right: 125px;
+    }
+
+    100% {
+        padding-right: 5px;
+    }
+}
+
+
 .home .context h4 {
-    animation: control-whith 4s 2s infinite ease-in-out;
+
     overflow: hidden;
     font-size: 26px;
     border-right: solid white 3px;
     width: fit-content;
     margin: auto;
-    padding: 0 10px 0 0;
     color: white;
+    position: relative;
+    animation-name: border-control;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+}
+
+
+.home .context h4 span {
+    /* background-color: #EC2403; */
+
+    color: white;
+    position: absolute;
+    font-size: 26px;
+    margin-left: 5px;
+
+}
+
+
+@keyframes designer-control {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    26% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    76% {
+        opacity: 1;
+    }
+
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.home .context h4 .designer {
+    animation-name: designer-control;
+    animation-duration: 8s;
+
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+
+}
+
+@keyframes developer-control {
+
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+
+    }
+
+    26% {
+        opacity: 1;
+
+    }
+
+    75% {
+        opacity: 1;
+
+    }
+
+    76% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 0;
+
+    }
+
+
+}
+
+.home .context h4 .developer {
+    animation-name: developer-control;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+
+
 
 }
 
