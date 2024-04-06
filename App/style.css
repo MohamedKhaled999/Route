@@ -1,26 +1,55 @@
-.parent {
-    width: 400px;
-    height: 400px;
-    background-color: yellow;
+.item {
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+
+
 }
 
-.grand {
-    width: 700px;
-    height: 700px;
-    background-color: wheat;
+.item img {
+    width: 100%;
+    display: block;
+    transition: 1s 1s;
+
 }
 
-.child {
-    width: 200px;
-    height: 200px;
-    background-color: aqua;
-    transition: width 1s, height 2s, background-color 3s, border-radius 4s;
-    transition-timing-function: cubic-bezier(.7, -0.65, .05, 1.2);
+.item:hover img {
+    transform: scale(1.3);
 }
 
-.grand:hover .child {
-    width: 300px;
-    height: 300px;
-    background-color: tomato;
-    border-radius: 50%;
+.item .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    color: whitesmoke;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.505);
+    opacity: 0;
+    transition: 1s 2s;
+}
+
+.item:hover .content {
+    transform: rotate(360deg);
+    opacity: 1;
+}
+
+
+
+.item .content h1,
+.item .content p {
+    margin: 0;
+    /* color: chartreuse; */
+    padding-block: 10px;
+    transform: translateX(100%);
+    transition: all 1s ;
+}
+
+.item:hover .content h1,
+.item:hover .content p {
+
+    transform: translate(0%);
+
 }

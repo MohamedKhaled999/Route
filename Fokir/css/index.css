@@ -372,7 +372,7 @@ ul {
 .about .container .about-context .head h2::before {
     content: '';
     width: 4px;
-    height: 100%;
+    height: 50%;
     background-color: #ff305b;
     position: absolute;
 
@@ -380,7 +380,7 @@ ul {
     bottom: 1px;
 }
 
-.about .container .about-context .head p {
+.about .container .about-context .head p {  
     padding-bottom: 25px;
     margin-bottom: 25px;
     border-bottom: dashed #555555 1px;
@@ -1075,17 +1075,6 @@ textarea {
 
     color: #ff305b;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .clear-fix {
     clear: both;
