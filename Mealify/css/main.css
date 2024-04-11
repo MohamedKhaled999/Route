@@ -6,22 +6,24 @@
 
 :root {
     --dark-red: #CE1212;
-    --red:#ff0000;
-    --white:#fff;
+    --red: #ff0000;
+    --white: #fff;
     --black: #000;
-    --gray:#7f7f90;
+    --gray: #7f7f90;
     --gray-section: #eee;
     --white-section: #fff;
-    --white-item:#fff;
-    --gray-item:#F5F5F5;
-    --gray-home-p:#4f4f5a;
-    --gray-home-h:#37373f;
-    --gray-chef-item:#7f7f90;
-    
-    transition: all 1s;
- 
+    --white-item: #fff;
+    --gray-item: #F5F5F5;
+    --gray-home-p: #4f4f5a;
+    --gray-home-h: #37373f;
+    --gray-chef-item: #7f7f90;
+    --svg-path: url(../images/team-shape.svg);
 
-  }
+    transition: all 1s;
+
+
+}
+
 html {
     scroll-behavior: smooth;
     scroll-snap-type: proximity;
@@ -105,7 +107,7 @@ ul {
 }
 
 .navbar .container .links ul {
-   
+
     font-size: 17px;
     font-weight: 600;
     margin: 0;
@@ -200,23 +202,26 @@ ul {
     bottom: 0;
 }
 
-:root:has( .btns .modes input:checked)   {
-    --white-section:#202020;
-    --dark-red:#D78C23;
+:root:has(.btns .modes input:checked) {
+    --white-section: #202020;
+    --dark-red: #D78C23;
     --gray-section: #252525;
-    --white-item:#171717;
-    --gray-item:#0D0D0D;
-    --gray-home-p:#9f9f9f;
-    --white:#000;
+    --white-item: #171717;
+    --gray-item: #0D0D0D;
+    --gray-home-p: #9f9f9f;
+    --white: #000;
     --black: #fff;
-    --red:#d59946;
-    --gray-home-h:#fff;
-    --gray-chef-item:#9f9f9f;
+    --red: #d59946;
+    --gray-home-h: #fff;
+    --gray-chef-item: #9f9f9f;
+    --svg-path: url(../images/team-shape-dark.svg);
 }
-:root:has( .btns input:checked) .light {
+
+:root:has(.btns input:checked) .light {
     display: flex;
 }
-:root:has( .btns input:checked) .dark {
+
+:root:has(.btns input:checked) .dark {
     display: none;
 }
 
@@ -444,11 +449,13 @@ ul {
     bottom: 0;
     right: 0;
     left: 0;
-    background-image: url(/Mealify/images/team-shape.svg);
-
+    color: var(--white);
+    background-image: var(--svg-path);
     padding-block: 20px;
+    height: 10%;
     border: 0;
 }
+
 .chefs .container .our-chefs .item .photo img {
     width: 100%;
     display: block;
@@ -495,9 +502,11 @@ ul {
     font-size: .9375rem;
     color: var(--gray-chef-item);
 }
+
 .chefs .container .our-chefs .item .content h3 {
     color: var(--black);
 }
+
 .chefs .container .our-chefs .item .content p {
     font-size: .9375rem;
     font-style: italic;
@@ -593,12 +602,13 @@ ul {
 
 /* Start Contact */
 
-.contact  {
+.contact {
 
-    
+
     padding-block: 20px;
 
 }
+
 .contact .container {
 
     margin: auto;
@@ -628,17 +638,18 @@ ul {
     display: flex;
     gap: 0 20px;
     align-items: center;
-    background-color:var(--gray-item);
+    background-color: var(--gray-item);
     padding: 20px;
 }
 
 .contact .details .item h3 {
     margin: 0 0 5px;
-    color:var(--gray);
+    color: var(--gray);
 
 }
 
-.contact .details .item p a ,.contact .details .item p{
+.contact .details .item p a,
+.contact .details .item p {
     margin: 0;
     color: var(--black);
 }
@@ -919,8 +930,8 @@ textarea {}
 
     /* Start Chefs */
 
-    .chefs .container  .our-chefs {
-        
+    .chefs .container .our-chefs {
+
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -928,8 +939,8 @@ textarea {}
     }
 
     .chefs .container .our-chefs .item {
-       
-       width: 49%;
+
+        width: 49%;
 
     }
 
@@ -989,6 +1000,7 @@ textarea {}
         order: 1;
         width: 49%;
     }
+
     /*End Footer*/
 }
 
@@ -997,8 +1009,8 @@ textarea {}
     /* Start Chefs */
 
     .chefs .container .our-chefs .item {
-       
-       width: 31.5%;
+
+        width: 31.5%;
 
     }
 

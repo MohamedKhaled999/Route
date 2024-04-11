@@ -2,17 +2,20 @@ body{
     height: 1000px;
     position: relative;
 }
-.parent{
-    background-color: tomato;
-    position: sticky;
- 
-    top: 0;
-    height: inherit;
-    z-index: 999;
-    }
-    .child{
-    background-color: blue;
-    border: 1px solid black;
-
-    }
-    
+.photo{
+    background-color: black;
+    position: relative;
+    height: 40%;
+}
+ .photo::after {
+    position: absolute;
+    content: 'sss';
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: aliceblue;
+    background-image:url(/Mealify/images/team-shape.svg);
+    padding-block: 20px;
+    height:10% ;   
+    border: 0;
+}
