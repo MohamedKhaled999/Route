@@ -1,55 +1,18 @@
-.item {
-    width: 30%;
+body{
+    height: 1000px;
     position: relative;
-    overflow: hidden;
-
-
 }
-
-.item img {
-    width: 100%;
-    display: block;
-    transition: 1s 1s;
-
-}
-
-.item:hover img {
-    transform: scale(1.3);
-}
-
-.item .content {
-    position: absolute;
+.parent{
+    background-color: tomato;
+    position: sticky;
+ 
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    height: inherit;
+    z-index: 999;
+    }
+    .child{
+    background-color: blue;
+    border: 1px solid black;
 
-    color: whitesmoke;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.505);
-    opacity: 0;
-    transition: 1s 2s;
-}
-
-.item:hover .content {
-    transform: rotate(360deg);
-    opacity: 1;
-}
-
-
-
-.item .content h1,
-.item .content p {
-    margin: 0;
-    /* color: chartreuse; */
-    padding-block: 10px;
-    transform: translateX(100%);
-    transition: all 1s ;
-}
-
-.item:hover .content h1,
-.item:hover .content p {
-
-    transform: translate(0%);
-
-}
+    }
+    
