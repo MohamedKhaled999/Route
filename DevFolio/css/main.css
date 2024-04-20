@@ -1,0 +1,126 @@
+body {
+    background-color: #F5F5F5;
+
+}
+.head h3{
+ font-size: 3rem;
+ font-weight: 700;
+}
+.head p::after{
+    content: "";
+    width: 2.5rem;
+    padding-block: .125rem;
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    translate: -50%;
+    background-color: #0078FF;
+}
+
+
+.w-85 {
+    width: 85%;
+
+}
+
+
+.navbar .logo {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.navbar .navbar-nav a:not(.dropdown-menu a) {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    padding-inline:0 ;
+    overflow: hidden;
+}
+
+.navbar .navbar-nav a:not(.dropdown-menu a)::before {
+    position: absolute;
+    content: "";
+    width: 80%;
+    bottom: 0;
+    left: 0;
+    padding-block: 1px;
+    transform: translateX(-110%);
+    background-color: white;
+    transition: all 0.3s;
+}
+.navbar .navbar-nav li:hover a::before{
+    transform: translateX(0%);
+}
+
+.second-title h5 {
+    font-size: 2rem;
+
+
+}
+
+.second-title {
+    font-size: 2rem;
+    position: relative;
+    width: fit-content;
+    padding-bottom: .0625rem;
+
+
+}
+
+.second-title::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    background-color: #0078FF;
+    width: 68%;
+    padding-block: .1rem;
+
+}
+
+.home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.718) 0% 100%), url(../images/hero-bg.jpg);
+    background-position: center;
+    background-clip: border-box;
+    background-size: cover;
+}
+
+.home h1 {
+    font-size: 4.5rem;
+}
+
+.home p {
+    font-size: 2.5rem;
+}
+
+.my-progress {
+    height: .7rem;
+}
+.services .icon{
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    box-shadow: #0078FF 0 0  0 10px;
+    transition: all 0.3s;
+}
+.services .item:hover .icon{
+    background-color: #0078FF;
+    box-shadow: #0077ff58 0 0  0 10px;
+}
+.counters{
+    height: 50vh;
+    background-image: linear-gradient(rgba(0, 120, 255,0.7) 0% 100%) ,url(../images/counters-bg.jpg);
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.counters .icon{
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+    box-shadow: #cde1f8 0 0  0 10px;
+    transition: all 0.3s;
+}
+
+
+

@@ -1,0 +1,29 @@
+body{
+    height: 600px;
+    position: relative;
+    box-sizing: border-box;
+
+}
+.photo{
+   
+    /* background: linear-gradient(#e66465, #9198e5); */
+    background-image:radial-gradient(red ,blue);
+    background-repeat: no-repeat;
+    background-color: rgba(21, 81, 92, 0.653);
+
+    position: relative;
+    height: 40%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    align-content: normal;
+    
+    
+}
+ .photo div {
+   background-color: aquamarine;
+    border: red 3px solid;
+    width: 10%;
+    height: 20%;
+
+ }
