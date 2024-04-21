@@ -123,4 +123,49 @@ body {
 }
 
 
+.portfolio .icon{
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    
+   
+}
+.portfolio .work-content p{ font-size: .8125rem;}
+.portfolio .icon{
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+}
 
+
+.testimonial-section{
+    height: 70vh;
+    background-image: linear-gradient(rgba(0, 120, 255,0.7) 0% 100%) ,url(../images/overlay-bg.jpg);
+    background-position: center;
+    background-attachment: fixed;
+}
+.testimonial-section .carousel .my-btns button:focus-within {
+    background-color:white   !important;
+}
+.testimonial-section .carousel .my-btns button {
+    padding: 6px;
+}
+
+.blog .item{
+    border: rgba(0, 0, 0,0.176) solid 1px;
+}
+
+.blog .blog-content> span {
+    top:0;
+    transform: translate(-50%,-50%) !important;
+    font-size: 13px;
+}
+.blog .blog-content .content-footer {
+    
+    border-top:  rgba(0, 0, 0,0.176)    solid 1px;
+}
+.blog .blog-content .content-footer img{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+}
