@@ -23,10 +23,12 @@ body {
     width: 85%;
 
 }
+
 .w-90 {
     width: 90%;
 
 }
+
 .navbar .logo {
     font-size: 1.75rem;
     font-weight: 600;
@@ -90,11 +92,11 @@ body {
 }
 
 .home h1 {
-    font-size: 4.5rem;
+    font-size: 3rem;
 }
 
 .home p {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 
 .my-progress {
@@ -115,7 +117,7 @@ body {
 }
 
 .counters {
-    
+
     background-image: linear-gradient(rgba(0, 120, 255, 0.7) 0% 100%), url(../images/counters-bg.jpg);
     background-position: center;
     background-attachment: fixed;
@@ -129,6 +131,13 @@ body {
     transition: all 0.3s;
 }
 
+.portfolio .item img {
+    transition: all 0.5s;
+}
+
+.portfolio .item:hover img {
+    transform: scale(1.3);
+}
 
 .portfolio .icon {
     width: 50px;
@@ -211,20 +220,23 @@ body {
     transition: all 0.3;
 }
 
-.contact .form form>*:not(button):focus,.contact .form form button:hover  {
+.contact .form form>*:not(button):focus,
+.contact .form form button:hover {
     outline: none;
     border: #0078FF solid 1px;
     box-shadow: #0077ff58 0 0 0 5px;
 
 }
-.contact .form form button{
+
+.contact .form form button {
     font-size: 1.25rem;
     font-weight: 400;
     text-transform: capitalize;
     padding-inline: 1.5625rem;
     padding-block: .625rem;
 }
-.contact .form form button:hover{
+
+.contact .form form button:hover {
     border: none;
     background-color: #0077ffd1;
 }
@@ -233,4 +245,14 @@ body {
 .footer {
     background-color: #0062D3;
     box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1) inset;
+}
+
+@media screen and (min-width: 768px) {
+    .home h1 {
+        font-size: 4.5rem;
+    }
+
+    .home p {
+        font-size: 2.5rem;
+    }
 }
