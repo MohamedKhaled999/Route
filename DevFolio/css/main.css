@@ -1,6 +1,6 @@
 body {
     background-color: #F5F5F5;
-
+    scroll-behavior: smooth;
 }
 
 .head h3 {
@@ -18,14 +18,9 @@ body {
     translate: -50%;
     background-color: #0078FF;
 }
-
-.w-85 {
-    width: 85%;
-}
-
-.w-90 {
-    width: 90%;
-}
+.bg-opacity-60{--bs-bg-opacity:0.6;}
+.w-85 {  width: 85%;}
+.w-90 {width: 90%;}
 
 .navbar .logo {
     font-size: 1.75rem;
@@ -107,7 +102,7 @@ body {
 }
 
 .home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.718) 0% 100%), url(../images/hero-bg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0% 100%), url(../images/hero-bg.jpg);
     background-position: center;
     background-clip: border-box;
     background-size: cover;
