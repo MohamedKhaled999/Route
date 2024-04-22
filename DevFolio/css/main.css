@@ -21,12 +21,10 @@ body {
 
 .w-85 {
     width: 85%;
-
 }
 
 .w-90 {
     width: 90%;
-
 }
 
 .navbar .logo {
@@ -35,7 +33,7 @@ body {
 }
 
 .navbar .navbar-nav a:not(.dropdown-menu a) {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     color: white;
     position: relative;
@@ -55,8 +53,32 @@ body {
     transition: all 0.3s;
 }
 
-.navbar .navbar-nav li:hover a::before {
+.navbar .navbar-nav .dropdown-menu a:hover,
+.navbar .navbar-nav .dropdown-menu a:focus {
+    color: #0078FF !important;
+    background-color: white;
+}
+
+
+.navbar .navbar-nav li:hover a::before,
+.navbar .navbar-nav li a.active::before {
     transform: translateX(0%);
+}
+
+.navbar .navbar-nav .dropdown:hover>.dropdown-menu,
+.navbar .navbar-nav .dropend:hover>.dropdown-menu {
+    display: block;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+
+}
+
+.navbar .navbar-nav .dropend:hover>.dropdown-menu
+ {
+    /* transform: translateX(100%); */
+    top: 0;
+    right: 100%;
 }
 
 .second-title h5 {
@@ -157,20 +179,17 @@ body {
     font-size: 30px;
 }
 
-
 .testimonial-section {
-    height: 70vh;
     background-image: linear-gradient(rgba(0, 120, 255, 0.7) 0% 100%), url(../images/overlay-bg.jpg);
     background-position: center;
     background-attachment: fixed;
 }
 
-.testimonial-section .carousel .my-btns button:focus-within {
-    background-color: white !important;
-}
-
 .testimonial-section .carousel .my-btns button {
-    padding: 6px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+
 }
 
 .blog .item {
@@ -214,13 +233,6 @@ body {
     box-shadow: #0077ff58 0 0 0 5px;
 }
 
-.contact .form form>*:not(button) {
-    outline: none;
-    border: #4e4e4e solid 1px;
-    transition: all 0.3;
-}
-
-.contact .form form>*:not(button):focus,
 .contact .form form button:hover {
     outline: none;
     border: #0078FF solid 1px;
@@ -236,12 +248,6 @@ body {
     padding-block: .625rem;
 }
 
-.contact .form form button:hover {
-    border: none;
-    background-color: #0077ffd1;
-}
-
-
 .footer {
     background-color: #0062D3;
     box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1) inset;
@@ -255,4 +261,12 @@ body {
     .home p {
         font-size: 2.5rem;
     }
+}
+
+@media screen and (min-width: 1365px) {
+
+    .navbar .navbar-nav .dropend:hover>.dropdown-menu {
+        left: 100%;
+    }
+
 }
