@@ -248,6 +248,19 @@ body {
     box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1) inset;
 }
 
+#up-btn-a{
+    display: none;
+}
+#up-btn{
+width: 40px;
+height: 40px;
+
+}
+#up-btn:hover{
+
+background-color: #308bf4 !important;
+}
+
 @media screen and (min-width: 768px) {
     .home h1 {
         font-size: 4.5rem;
