@@ -1,17 +1,284 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" title="Route">
-    <title>Document</title>
-    <link rel="stylesheet" href="CSS/main.css">
-</head>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/57081439fe.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-light">
+    <header>
+      <nav class="navbar nav-underline navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+    </header>
 
-<body>
-    <div class="one">1</div>
-    <div class="two">2</div>
-    <div class="three">3</div>
+    <main class="container" >
+      <div class="row parent gx-3">
+        <div class="ch ch-1 col-3 ">
+          <div class=" bg-danger">1</div>
+        </div>
+        <div class="ch ch-2 col-3 bg-danger">
+          <div class=" bg-danger">2</div>
+          </div>
+        <div class="ch ch-3 col-6  ">
+          <div class=" bg-info">
+            <div class="row bg-warning">
+            <div class="col-4 bg-danger">4</div>
+        </div>
+       
 
-</body>
+      </div>
 
+
+      <section class="slider">
+        <div class="container">
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide w-75 m-auto pt-5"
+          >
+            <div
+              class="carousel-inner border border-5 border-warning position-relative overflow-visible"
+            >
+              <div class="carousel-item active bg-info">
+                <div
+                  class="m-auto text-center d-flex flex-column align-items-center"
+                >
+                  <img
+                    src="image/pensee-resort.jpg"
+                    class="shadow d-block rounded-circle"
+                    style="width: 100px; height: 100px"
+                    alt="..."
+                  />
+                  <h3 class="position-relative py-2 h2">Eyard Nealon</h3>
+                  <h5 class="">Senior Chef</h5>
+                  <p class="lead text-secondary">
+                    Voluptates quam deleniti vel perferendis iure! Inventore
+                    debitis adipisci, iste facere quam voluptate unde odio
+                    corporis quibusdam nihil tempora. Doloribus, et dignissimos!
+                  </p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div
+                  class="m-auto text-center d-flex flex-column align-items-center"
+                >
+                  <img
+                    src="image/pensee-royal.jpg"
+                    class="shadow d-block rounded-circle"
+                    style="width: 100px; height: 100px"
+                    alt="..."
+                  />
+                  <h3 class="position-relative py-2 h2">Eyard Nealon</h3>
+                  <h5 class="">Senior Chef</h5>
+                  <p class="lead text-secondary">
+                    Voluptates quam deleniti vel perferendis iure! Inventore
+                    debitis adipisci, iste facere quam voluptate unde odio
+                    corporis quibusdam nihil tempora. Doloribus, et dignissimos!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-indicators position-static bg-danger">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container py-5">
+         
+          <div class="title text-center">
+            <h2 class="h1">Hi iam mohamed khaled</h2>
+            <p class="text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque.</p>
+          </div>
+
+
+          <ul class="nav nav-pills nav-fill justify-content-center bg-danger rounded py-3 my-4" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+              <div class="row g-4">
+                <div class="col-3">
+                  <div class="card" >
+                    <img src="image/pensee-resort.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                      <div class=" d-flex justify-content-between align-items-center">
+                        <span  class="badge bg-danger fs-6 "> All Levels</span>
+                        <span class=" ">
+                          <i class="fa-solid fa-heart text-danger"></i>
+                        </span>
+                      </div>
+    
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+    
+                      
+                    </div>
+                    <div class="card-footer">
+                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum?</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+              <div class="row g-4">
+                <div class="col-3">
+                  <div class="card" >
+                    <img src="image/pensee-resort.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                      <div class=" d-flex justify-content-between align-items-center">
+                        <span  class="badge bg-danger fs-6 "> All Levels</span>
+                        <span class=" ">
+                          <i class="fa-solid fa-heart text-danger"></i>
+                        </span>
+                      </div>
+    
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+    
+                      
+                    </div>
+                    <div class="card-footer">
+                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum?</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="card" >
+                    <img src="image/pensee-resort.jpg" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                      <div class=" d-flex justify-content-between align-items-center">
+                        <span  class="badge bg-danger fs-6 "> All Levels</span>
+                        <span class=" ">
+                          <i class="fa-solid fa-heart text-danger"></i>
+                        </span>
+                      </div>
+    
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+    
+                      
+                    </div>
+                    <div class="card-footer">
+                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum?</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+            <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+          </div>
+
+
+
+          <div class="row g-4">
+            <div class="col-3">
+              <div class="card" >
+                <img src="image/pensee-resort.jpg" class="card-img-top" alt="...">
+                <div class="card-body ">
+                  <div class=" d-flex justify-content-between align-items-center">
+                    <span  class="badge bg-danger fs-6 "> All Levels</span>
+                    <span class=" ">
+                      <i class="fa-solid fa-heart text-danger"></i>
+                    </span>
+                  </div>
+
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                  
+                </div>
+                <div class="card-footer">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+    </main>
+    <footer>
+    <div id="demo" class="child-1 bg-secondary"> child1 </div>
+    <div class="child-2 bg-danger"> child2 </div>
+    <div class="child-3 bg-info"> child3 </div>
+    <div class="child-4 bg-white"> child4 </div>
+    <div class="child-5 bg-warning pt-5"> child5 </div>
+     <div class="child-6 bg-primary"> child6 </div>
+      
+    </footer>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>

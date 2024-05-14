@@ -1,0 +1,567 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* ==================== Start Global ======================== */
+:root {
+
+    scroll-behavior: smooth;
+    --section-padding: 2.5rem;
+    --con-padding: 1.875rem;
+    --con-margin: 1.875rem;
+
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #343434;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 15px;
+    color: #748182;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h6 {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.1;
+}
+
+a,
+a:hover {
+    color: inherit;
+    text-decoration: none;
+
+}
+
+ul {
+    list-style: none;
+}
+
+.my-btn {
+    --bs-btn-bg: #000;
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #fff;
+}
+
+section .btn {
+    font-size: .8125rem;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    padding: 10px 30px;
+
+}
+
+
+.main-title {
+    margin: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+
+    margin-bottom: 2.5rem;
+}
+
+.main-title h3 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    position: relative;
+    /* background-color: black; */
+    z-index: 4;
+    padding-bottom: 8px;
+
+
+
+}
+
+.main-title h3::after {
+    content: "";
+    width: 100%;
+    height: 1.875rem;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: url(../images/dots.png);
+}
+
+
+.icon span {
+    width: 70px;
+    margin-bottom: 1.25rem;
+    height: 70px;
+    font-size: 1.875rem;
+    border-radius: 50%;
+    background-color: rgb(244, 244, 244);
+    color: rgb(28, 28, 28);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.item:hover span {
+
+    background-color: rgb(28, 28, 28);
+    color: rgb(244, 244, 244);
+}
+
+section {
+    padding-block: var(--section-padding);
+}
+
+section .container {
+    padding-block: var(--con-padding);
+    margin-block: var(--con-margin);
+}
+
+
+
+/* ==================== End Global ======================== */
+
+
+/* ==================== Start Nav ======================== */
+
+
+.my-nav h2 {
+    font-size: 1.125rem;
+    font-weight: 800;
+}
+
+.my-nav .navbar-nav .nav-item {
+    overflow: hidden;
+
+}
+
+.my-nav .navbar-nav .nav-item a {
+    font-size: 14px;
+    color: #fff;
+    padding: 0;
+    position: relative;
+
+
+
+}
+
+.my-nav .navbar-nav .nav-item a.active::after {
+
+    -webkit-transform: translateX(0%);
+
+    -ms-transform: translateX(0%);
+
+    transform: translateX(0%);
+}
+
+.my-nav .navbar-nav .nav-item a::after {
+    content: "";
+    width: 100%;
+    height: 1.5px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateX(-120%);
+    -ms-transform: translateX(-120%);
+    transform: translateX(-120%);
+    -webkit-transition: 0.3s 0.2s;
+    -o-transition: 0.3s 0.2s;
+    transition: 0.3s 0.2s;
+
+}
+
+
+/* ==================== End Nav ======================== */
+
+
+
+/* ==================== Start Home  ======================== */
+.home {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7))), url(../images/bg.jpg);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7) 0% 100%), url(../images/bg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7) 0% 100%), url(../images/bg.jpg);
+    background-position: 0 0;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.home .content h5 {
+    font-size: 3.125rem;
+    font-weight: 800;
+}
+
+.home .content h1 {
+    font-size: 3.75rem;
+    font-weight: 200;
+}
+
+.home .social-links span {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.32);
+
+}
+
+
+/* ==================== End Home  ======================== */
+
+
+
+/* ==================== Start About  ======================== */
+
+
+.about .about-image {
+    padding: 0 0 30px 30px;
+}
+
+.about .about-image::after {
+    content: "";
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url(../images/dots.png);
+    z-index: -1;
+}
+
+.about .about-content>h3 {
+    font-size: 1.875rem;
+    font-weight: 800;
+
+}
+
+.about .about-content>.pos {
+    color: #999;
+    letter-spacing: 2px;
+    font-size: .875rem;
+
+}
+
+.about .about-content>.pos-about {
+    line-height: 1.6;
+    color: #748182;
+    font-size: .9375rem;
+
+}
+
+.about .about-content .skills .progress {
+    height: 25px;
+    -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+    background-color: #F7F7F7;
+}
+
+.about .about-content .skills .progress h6,
+.about .about-content .skills .progress .h6 {
+    font-weight: 500;
+    font-size: .8125rem;
+}
+
+
+/* ==================== End About  ======================== */
+
+
+
+
+/* ==================== Start Services  ======================== */
+.services {
+    background-color: #F7F7F7;
+}
+
+.services .item {
+    -webkit-box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+}
+
+.services .item h6 {
+    font-size: 1.125rem;
+    font-weight: 800;
+    margin-bottom: .9375rem;
+}
+
+.services .item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ==================== End Services  ======================== */
+
+
+
+/* ==================== Start Portfolio  ======================== */
+
+.portfolio .nav .nav-item .nav-link {
+    color: #000;
+    background-color: unset;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+
+
+
+}
+
+.portfolio .nav .nav-item .nav-link::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateX(-120%);
+    -ms-transform: translateX(-120%);
+    transform: translateX(-120%);
+    -webkit-transition: 0.3s 0.1s;
+    -o-transition: 0.3s 0.1s;
+    transition: 0.3s 0.1s;
+
+}
+
+.portfolio .nav .nav-item .nav-link.active:after {
+
+    -webkit-transform: translateX(0%);
+
+    -ms-transform: translateX(0%);
+
+    transform: translateX(0%);
+}
+
+.portfolio .item-cover .image .cover {
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.portfolio .item-cover .image:hover .cover,
+.portfolio .item-cover .image:hover .cover .content h6,
+.portfolio .item-cover .image:hover .cover .content .icon-cover {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.portfolio .item-cover .image .cover .content h6 {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .125rem;
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.portfolio .item-cover .image .cover .content .icon-cover {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #000;
+    -webkit-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    transform: translateY(15px);
+    color: #fff;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+
+
+
+
+
+.portfolio .item-cover .image .cover .content .icon-cover {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.portfolio .item-cover .image .cover .content .icon-cover:hover {
+    background-color: #fff;
+    color: #000;
+
+}
+
+/* ==================== End Portfolio  ======================== */
+
+
+
+/* ==================== Start Testimonials  ======================== */
+.testimonials {
+    background-color: #F7F7F7;
+}
+
+.testimonials .content img {
+    width: 90px;
+}
+
+.testimonials .content span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+
+}
+
+
+.testimonials .carousel-indicators [data-bs-target] {
+
+    width: 10px;
+    height: 10px;
+    margin-inline: 7px;
+    border-radius: 50%;
+    background-color: #869791;
+}
+
+/* ==================== End Testimonials  ======================== */
+
+
+/* ==================== Start Counters  ======================== */
+.counters .counter span {
+    font-size: 1.875rem;
+}
+
+.counters .counter h3 {
+    font-size: 1.875rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.counters .counter p {
+    font-weight: 600;
+}
+
+
+/* ==================== End Counters  ======================== */
+
+
+
+/* ==================== Start Team  ======================== */
+
+.team {
+    background-color: #F7F7F7;
+}
+
+
+.team .team-member .image .cover {
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    background-color: rgba(255, 255, 255, 0.93);
+    bottom: 5px;
+    -webkit-transform: rotateY(180deg) scale(0.5);
+    transform: rotateY(180deg) scale(0.5);
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.team .team-member:hover .image .cover {
+    opacity: 1;
+    -webkit-transform: rotateY(0) scale(1);
+    transform: rotateY(0) scale(1);
+}
+
+.team .team-member .image img {
+
+    -webkit-transition: all 0.5s;
+
+    -o-transition: all 0.5s;
+
+    transition: all 0.5s;
+}
+
+.team .team-member .image:hover img {
+
+    -webkit-transform: scale(1.2);
+
+    -ms-transform: scale(1.2);
+
+    transform: scale(1.2);
+}
+
+
+.team .team-member .content {
+    background-color: #5B5B5B;
+}
+
+
+
+
+.team .social-links span {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    border: #000 solid 0.8PX;
+    background-color: rgba(0, 0, 0);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.team .social-links span:hover {
+    color: #000;
+    background-color: #FFF;
+}
+
+/* ==================== End Team  ======================== */
+
+/* ==================== Start Contact  ======================== */
+
+.contact form *:not(button, div) {
+    background-color: #F4F4F4;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* ==================== End Contact  ======================== */
+
+
+/* ==================== Start Footer  ======================== */
+
+footer {
+    background-color: #1C1C1C;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+/* ==================== End Footer  ======================== */
+
+
+
+@media screen and (min-width:1400px) {
+    .container {
+        width: 1140px;
+    }
+}

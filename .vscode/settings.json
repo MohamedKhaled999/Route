@@ -1,9 +1,8 @@
 {
-    "gutterpreview.imagePreviewMaxHeight": 10,
-    "gutterpreview.imagePreviewMaxWidth": 10,
-    "gutterpreview.enableReferenceLookup": true,
-    "gutterpreview.paths": {
-        "default": {},
-
-    }
+  "gutterpreview.imagePreviewMaxHeight": 10,
+  "gutterpreview.imagePreviewMaxWidth": 10,
+  "gutterpreview.enableReferenceLookup": true,
+  "gutterpreview.paths": {
+    "default": {}
+  }
 }

@@ -167,6 +167,22 @@ ul {
 
 }
 
+:root:has( #home:target) .navbar .container .links ul li a[href="#home"]::after {
+    transform: translateX(0%);
+
+}
+:root:has( #chefs:target) .navbar .container .links ul li a[href="#chefs"]::after {
+    transform: translateX(0%);
+
+}
+:root:has( #gallery:target) .navbar .container .links ul li a[href="#gallery"]::after {
+    transform: translateX(0%);
+
+}:root:has( #contact:target) .navbar .container .links ul li a[href="#contact"]::after {
+    transform: translateX(0%);
+
+}
+
 .navbar .btns {
 
     display: flex;
@@ -226,7 +242,7 @@ ul {
 }
 
 
-/* home section */
+/* =================== home section ===================== */
 .home {
     background-color: var(--gray-section);
     min-height: 100vh;
