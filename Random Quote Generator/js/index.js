@@ -48,6 +48,6 @@ if (rand == last) {
 document.getElementById('quote').innerHTML=quotes[rand].quote
 document.getElementById('quote-author').innerHTML=quotes[rand].author
 last =rand;
-console.log(rand)
+// console.log(rand)
 
 }
