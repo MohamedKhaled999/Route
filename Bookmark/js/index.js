@@ -1,7 +1,14 @@
 var siteNameInput = document.getElementById("siteName");
 var siteUrlInput = document.getElementById("siteUrl");
 var bookmarkTableInput = document.getElementById("bookmarkTable");
-var myModal = new bootstrap.Modal( document.getElementById("myModal"));
+var myModal = new bootstrap.Modal(document.getElementById("myModal"));
+
+var myModalUpdate = new bootstrap.Modal(
+  document.getElementById("myModalUpdate")
+);
+
+var siteNameUpdateInput = document.getElementById("siteNameUpdate");
+var siteUrlUpdateInput = document.getElementById("siteUrlUpdate");
 
 var bookmarks = [];
 
@@ -16,17 +23,16 @@ function addBookmark() {
     siteUrl: siteUrlInput.value,
   };
 
-  if (isValid(siteNameInput ) && isValid(siteUrlInput )) {
+  if (isValid(siteNameInput) && isValid(siteUrlInput)) {
     bookmarks.push(bookmark);
     localStorage.setItem("bookmarkList", JSON.stringify(bookmarks));
     displayData();
-    clearData()
+    clearData();
   } else {
-    var modal = 
-    // modal.toggle();
-    myModal.toggle();
+    var modal =
+      // modal.toggle();
+      myModal.toggle();
     // console.log(myModal);
-   
   }
 }
 
@@ -69,28 +75,30 @@ function displayData() {
   }
 
   bookmarkTableInput.innerHTML = temp;
+  addRowsEvent();
+
 }
 
 function isValid(ele) {
   var regex;
-  var eleInput;
-  console.log(ele);
-  if (ele.id == siteNameInput.id) {
+  ele;
+  // console.log(ele);
+  if (ele.id == siteNameInput.id || ele.id == siteNameUpdateInput.id) {
     regex = /^\w{3,}( \w{3,})*$/g;
-    eleInput = siteNameInput;
+    // ele = ele.id == siteNameInput.id ? siteNameInput : siteNameUpdateInput;
   } else {
     regex =
       /^(?:(?:https?|ftp):\/\/)?(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)+[^\s]*$/g;
-    eleInput = siteUrlInput;
+    // ele = ele.id ==siteUrlInput.id ? siteUrlInput : siteUrlUpdateInput;
   }
 
-  if (regex.test(eleInput.value)) {
-    eleInput.classList.add("is-valid");
-    eleInput.classList.remove("is-invalid");
+  if (regex.test(ele.value)) {
+    ele.classList.add("is-valid");
+    ele.classList.remove("is-invalid");
     return true;
   } else {
-    eleInput.classList.add("is-invalid");
-    eleInput.classList.remove("is-valid");
+    ele.classList.add("is-invalid");
+    ele.classList.remove("is-valid");
 
     return false;
   }
@@ -98,14 +106,75 @@ function isValid(ele) {
 
 function clearData() {
   siteUrlInput.value = null;
-  siteNameInput.value =null;
-  siteNameInput.classList.remove("is-invalid","is-valid")
-  siteUrlInput.classList.remove("is-invalid","is-valid")
-
-
+  siteNameInput.value = null;
+  siteNameInput.classList.remove("is-invalid", "is-valid");
+  siteUrlInput.classList.remove("is-invalid", "is-valid");
 }
 
 
-document.querySelector('.inputs button').addEventListener('click',addBookmark);
-siteUrlInput.addEventListener('input', function(e){ isValid(e.target)})
-siteNameInput.addEventListener('input',function(e){ isValid(e.target)})
+
+/* UPDATE METHODS FOE POP WINDOW */
+
+function updateBookmark() {
+  if (isValid(siteNameUpdateInput) && isValid(siteUrlUpdateInput)) {
+    bookmarks.splice(index, 1, {
+      siteName: siteNameUpdateInput.value,
+      siteUrl: siteUrlUpdateInput.value,
+    });
+  }
+  else{
+    myModal.show()
+  }
+  localStorage.setItem("bookmarkList", JSON.stringify(bookmarks));
+
+
+  displayData();
+}
+
+function addRowsEvent() {
+  var    rows = document.querySelectorAll("tbody tr");
+
+  for (var j = 0; j < rows.length; j++) {
+
+    rows[j].addEventListener("click", function (e) {
+     
+      if (e.target.tagName=='button'.toUpperCase()) {
+        return
+      }
+      index = +e.target.parentNode.children[0].innerHTML - 1;
+      console.log(index, bookmarks[index]);
+      siteNameUpdateInput.value = bookmarks[index].siteName;
+      siteUrlUpdateInput.value = bookmarks[index].siteUrl;
+  
+      myModalUpdate.show();
+    });
+  }
+}
+
+
+/* EVENTS */
+
+
+document.querySelector(".inputs button").addEventListener("click", addBookmark);
+siteUrlInput.addEventListener("input", function (e) {
+  isValid(e.target);
+});
+siteNameInput.addEventListener("input", function (e) {
+  isValid(e.target);
+});
+/* EVENTS FOR UPDATE POP WINDOW */
+siteNameUpdateInput.addEventListener("input", function (e) {
+  isValid(e.target);
+});
+siteUrlUpdateInput.addEventListener("input", function (e) {
+  isValid(e.target);
+});
+document.getElementById("btnUpdate").addEventListener("click", updateBookmark);
+
+
+
+//-----------------------------------------
+
+
+
+
