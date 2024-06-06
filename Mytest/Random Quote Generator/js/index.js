@@ -191,3 +191,15 @@ function getRandomQuote() {
   last = rand;
   // console.log(rand)
 }
+
+// --------------------------------------------------------------
+
+
+var count = 0;
+var hamda= setInterval(function(){
+  count++;
+  document.body.innerHTML =count
+  if(count ==100){
+    clearInterval(hamda)
+  }
+},100)

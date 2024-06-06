@@ -1,3 +1,10 @@
 #quote,#quote-author,*{
     font-family: "Libre Baskerville", serif;
 }
+
+#arrow{
+    height: 0;
+    border-color: red blue ;
+    border-width: 200px;
+    border-style: solid;
+}
