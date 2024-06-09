@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Login System</title>
+
+    <link rel="icon" href="images/bookmark.png" />
+
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+
+  </head>
+  <body>
+    <div class="container p-3 text-center position-relative ">
+      
+      <div class="w-70 m-auto position-relative ">
+        <div class="background ">
+          <div class="shape"></div>
+          <div class="shape"></div> 
+      </div>
+        <div class=" my-shadow   mt-5 p-4">
+          
+          <form
+            id="loginForm"
+            class="d-flex flex-column gap-4 position-relative"
+            action=""
+            method="get"
+          >
+            <h1 class="">Smart Login System</h1>
+  
+            <div class="position-relative">
+              <input
+                class="form-control bg-transparent shadow-none text-white"
+                type="text"
+                name="emali"
+                id="email"
+                placeholder="Enter your email"
+              />
+              <div class="invalid-tooltip">Please provide a valid email.</div>
+            </div>
+  
+            <div class="position-relative">
+              <input
+                class="form-control bg-transparent shadow-none text-white"
+                type="password"
+                name="pass"
+                id="pass"
+                placeholder="Enter your password"
+              />
+              <div class="invalid-tooltip">
+                At least one lowercase , one uppercase alphabet <br />
+                one Numeric digit<br />
+                At least one special character i.e. [‘@’, ‘$’, ‘.’, ‘#’, ‘!’, ‘%’,
+                ‘*’]
+                <span class="d-block text-warning">min length is 6 </span>
+              </div>
+            </div>
+  
+  
+            <button
+              id="loginBtn"
+              class="btn mt-3 mb"
+              type="submit"
+            >
+              Login
+            </button>
+  
+            <p class="text-white">
+              Don’t have an account?
+              <a class="text-white" href="signup.html"> Sign Up </a>
+            </p>
+          </form>
+  
+          <div id="myToast" class="toast align-items-center position-absolute  end-0 bottom-0 m-1 bg-danger bg-opacity-75 text-white"  autohide="false" animation="true" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body">
+                incorrect email or password
+              </div>
+              <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+     
+    
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <script src="../js/index.js"></script>
+  </body>
+</html>
