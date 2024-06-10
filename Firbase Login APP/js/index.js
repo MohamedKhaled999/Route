@@ -6,10 +6,12 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebas
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"
+import { getFirestore ,collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"
+import { getDatabase ,ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
 
 
 
@@ -26,15 +28,31 @@ const firebaseConfig = {
   messagingSenderId: "23016456449",
   appId: "1:23016456449:web:88c28f23e1ddb3fadedb00",
   measurementId: "G-TDX5WS6HPG",
+  databaseURL:"https://console.firebase.google.com/u/1/project/forntendtest/database/forntendtest-default-rtdb/data/~2F"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app)
+
+
+/////////////////////////
+try {
+  const docRef = await addDoc(collection(db, "users"), {
+    first: "Ada",
+    last: "Lovelace",
+    born: 1815
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+/////////////////////////////////////
 
 
 const analytics = getAnalytics(app);
 
-
+const auth = getAuth(app);
 
 
 //  -----------
@@ -53,8 +71,12 @@ const loginForm = document.getElementById("loginForm");
     );
 
     try {
-      const cradintials = await signInWithEmailAndPassword(getAuth(), loginForm.children[1].value, loginForm.children[2].value)
+      const cradintials = await signInWithEmailAndPassword(auth, loginForm.children[1].value, loginForm.children[2].value)
       console.log("cradintials", cradintials);
+      if(auth.currentUser){
+        console.log("currentUser", auth.currentUser);
+      }
+
       loginForm.reset();
     } catch (error) {
       console.log(error)
@@ -63,11 +85,12 @@ const loginForm = document.getElementById("loginForm");
   });
 };
 
+
 if (loginBtn) {
   handleLogin()
 }
 export const getMyAuth =()=> {
-  return getAuth(app)
+  return auth;
 };
 
 
