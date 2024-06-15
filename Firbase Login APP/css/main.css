@@ -6,6 +6,14 @@ body{
 .w-70{
     width: 70%;
 }
+.h-85{
+    height: 85%;
+}
+
+.chat-content,.users-chats{
+    max-height: 90%;
+}
+
 
 .my-shadow{
     box-shadow:-5px 2px 54px -9px rgba(0, 0, 0, 1)
@@ -13,4 +21,22 @@ body{
 h1{
     color: #17a2b8
     ;
+}
+.myNav{
+   height: 10%; 
+   padding: 16px;
+}
+input#findFriend{
+    box-shadow: 0 0 5px  0.1px gray inset !important;
+}
+input:not(#messageOtsender){
+    color: white !important;
+}
+img{
+    height: 38px;
+    width: 38px;
+}
+
+li:hover,.search-item:hover {
+   background-color: rgba(0, 0, 0, 0.422) ;
 }

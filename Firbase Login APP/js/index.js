@@ -1,5 +1,3 @@
-
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
@@ -7,13 +5,19 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged
+  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-import { getFirestore ,collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"
-import { getDatabase ,ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
-
-
+import {
+  getFirestore,
+  collection,
+  addDoc,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import {
+  getDatabase,
+  ref,
+  set,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,39 +32,36 @@ const firebaseConfig = {
   messagingSenderId: "23016456449",
   appId: "1:23016456449:web:88c28f23e1ddb3fadedb00",
   measurementId: "G-TDX5WS6HPG",
-  databaseURL:"https://console.firebase.google.com/u/1/project/forntendtest/database/forntendtest-default-rtdb/data/~2F"
+  databaseURL:
+    "https://console.firebase.google.com/u/1/project/forntendtest/database/forntendtest-default-rtdb/data/~2F",
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app)
-
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
 
 /////////////////////////
-try {
-  const docRef = await addDoc(collection(db, "users"), {
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
+// try {
+//   const docRef = await addDoc(collection(db, "users"), {
+//     first: "Ada",
+//     last: "Lovelace",
+//     born: 1815
+//   });
+//   console.log("Document written with ID: ", docRef.id);
+// } catch (e) {
+//   console.error("Error adding document: ", e);
+// }
 /////////////////////////////////////
-
 
 const analytics = getAnalytics(app);
 
 const auth = getAuth(app);
 
-
 //  -----------
 const loginBtn = document.getElementById("loginBtn");
 const loginForm = document.getElementById("loginForm");
 
- const handleLogin = () => {
- 
+const handleLogin = () => {
   // console.log(loginForm.children[1].value);
   loginBtn.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -71,30 +72,31 @@ const loginForm = document.getElementById("loginForm");
     );
 
     try {
-      const cradintials = await signInWithEmailAndPassword(auth, loginForm.children[1].value, loginForm.children[2].value)
+      const cradintials = await signInWithEmailAndPassword(
+        auth,
+        loginForm.children[1].value,
+        loginForm.children[2].value
+      );
       console.log("cradintials", cradintials);
-      if(auth.currentUser){
+      if (auth.currentUser) {
         console.log("currentUser", auth.currentUser);
       }
-
+      window.location = "./home.html";
       loginForm.reset();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-
   });
 };
 
-
 if (loginBtn) {
-  handleLogin()
+  handleLogin();
 }
-export const getMyAuth =()=> {
+export const getMyAuth = () => {
   return auth;
 };
 
-
-export const getDB =()=> {
-  return getFirestore()
+export const getDB = () => {
+  return getFirestore();
 };
-
+export const myCurrentUser = auth.currentUser;

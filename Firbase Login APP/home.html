@@ -1,49 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>home
-    </title>
-    
-    <link rel="icon" href="images/bookmark.png" />
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>home</title>
 
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/main.css" />
-  </head>
-  <body >
-    
+  <!-- <link rel="icon" href="images/bookmark.png" /> -->
 
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg fixed-top">
-        <div class="container  ">
-          <a class="navbar-brand text-white" href="#">SMART LOGIN</a>
-          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon text-light"></span>
-          </button>
-          <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+<body>
+  <main class="vh-100 d-flex justify-content-center align-items-center ">
+    <div class="container border border-2 rounded-2 h-85">
+      <div class="row h-100">
+        <aside class="col-4 border-end p-0 h-100  ">
+          <div class="myNav d-flex justify-content-between align-items-center bg-light">
+            <h1 class="h5 text-success">My Chat</h1>
+            <div id="navContentAside" class="nav-content d-flex align-items-center gap-2">
+              <img class="bg-danger rounded-circle"  
+              style="height: 38px; width: 38px" />
+              <span>Mohamed Khaled</span>
+
+              <button id="btnLogOut" class="btn btn-warning"> Logout</button>
+            </div>
+          </div>
+          <div class="users-chats overflow-auto ">
+            <div id="searchContainer" class="position-relative">
+              <input type="text" name="findFriend" id="findFriend"
+              class=" form-control p-2 py-3 bg-transparent   border-0 shadow-none" placeholder="Find a user">
+              <div id="searchUsers" class="rounded-bottom rounded-end bg-light bg-opacity-75  position-absolute p-1 mt-1 w-100  top-100  shadow-lg d-none ">
+
+              </div>
+            </div>
+            <ul class="list-unstyled  overflow-auto mt-1  ">
+            
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom border-1 border-secondary ps-2">
+                <div class="item-chat-content  d-flex align-items-center gap-3">
+                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                  <div>
+                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
+                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <div class="chat col-8 p-0 bg-success h-100 d-flex flex-column justify-content-between">
+
+          <div class="myNav d-flex justify-content-between bg-warning align-items-center ">
+            <span class="h5 text-success">My Chat</span>
+          </div>
+          <div class="chat-content h-90 d-flex flex-column">
+
+            <div class="d-flex flex-column overflow-auto" id="messageContainer">
+             
            
-           <div class=" ms-auto mt-2 ">
-            <button id="btnLogOut" class=" w-100 btn btn-outline-warning" type="submit">Logout</button>
-           </div>
-           
+              
+              <div class="receiver align-self-end d-flex align-items-center ">
+
+                <p class="  rounded-start rounded-bottom bg-info p-2 m-2"> i am fine
+                </p>
+                <img class="bg-white rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+              </div>
+
+              <div class="sender align-self-start d-flex align-items-center">
+                <img class="bg-white rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+                <p class="  rounded-end rounded-bottom bg-danger p-2 m-2"> hello mohamed
+                </p>
+              </div>
+
+              <div class="receiver align-self-end d-flex align-items-center ">
+
+                <p class="  rounded-start rounded-bottom bg-info p-2 m-2"> i am fine
+                </p>
+                <img class="bg-white rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
+              </div>
+             
+            </div>
+
+            <div class="d-flex gap-1 p-1 ">
+
+              <input type="text" name="message" id="messageOtsender" class="p-2 w-100 rounded text-dark border-1 border-white shadow   ">
+              <button id="sendBtn" class="btn btn-outline-warning">send</button>
+            </div>
+
+          </div>
         </div>
-      </nav>
+      </div>
+  </main>
 
-    
-  <div class="container text-center  d-flex  align-items-center justify-content-center  min-vh-100">
-    <div class="my-shadow w-70  mt-5 p-5  rounded-2">
-      <h1 id="userName" class="">
-        Welcome Mohmaed
-      </h1>
-    </div>
-  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/home.js"></script>
+</body>
 
-
-
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="js/home.js"></script>
-  </body>
 </html>
