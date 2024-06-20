@@ -58,9 +58,10 @@ form {
 form input {
     outline: none;
     color: white;
-
-
 }
+main form {
+    width: 60%;
+} 
 
 form button {
     background-color: rgb(0, 154, 216) !important;
@@ -170,4 +171,17 @@ footer ul span:hover {
 
 .modal-body .rules i {
     color:rgb(0, 154, 216) ;
+}
+
+
+@keyframes my-animation {
+    from {width: 60%;}
+    to {width: 100%;}
+}
+
+
+
+
+.input-motion{
+   animation: my-animation 0.69s ease-out 0.1s forwards;
 }

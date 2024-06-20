@@ -3,10 +3,28 @@ const mainContainer = document.querySelector("main .row");
 const days = document.querySelectorAll("main .card");
 const myModal = new bootstrap.Modal(document.getElementById("myModal"));
 const findBtn = document.getElementById("findBtn");
+const mainForm = document.querySelector("main form");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position);
+      let x= position.coords.latitude+","+position.coords.longitude;
+      console.log(x);
+
+      getData(x);
+    });
+  }
+}
+getLocation();
+
+mainForm.addEventListener("click", () => {
+  mainForm.classList.add("input-motion");
+});
 
 findBtn.addEventListener("click", function (e) {
   e.preventDefault();
-    getData(cityInput.value);
+  getData(cityInput.value);
 });
 cityInput.addEventListener("change", () => {
   getData(cityInput.value);
