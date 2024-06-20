@@ -1,5 +1,3 @@
-//api.weatherapi.com/v1/forecast.json?key=a2109374c5df44d2902185626241906&q=giza&days=3
-
 const cityInput = document.getElementById("cityInput");
 const mainContainer = document.querySelector("main .row");
 const days = document.querySelectorAll("main .card");
