@@ -1,0 +1,173 @@
+body {
+    background-color: #1E202B;
+    font-family: "Roboto", sans-serif;
+}
+
+.navbar img {
+    width: 64px;
+    height: 38px
+}
+
+.navbar h1 {
+    font-size: 1rem;
+}
+
+
+.navbar span {
+    font-size: .625rem;
+    color: rgb(191, 193, 200);
+}
+
+
+.navbar-nav.my-links {
+    --bs-nav-link-color: #fff;
+    --bs-nav-link-hover-color: rgb(0, 154, 216);
+    --bs-nav-link-padding-y: 4px;
+    --bs-navbar-nav-link-padding-x: 25px;
+
+}
+
+
+.navbar-nav.my-links .nav-link {
+
+    transition: border 0.5s;
+    border-radius: 30px;
+    border: solid rgba(0, 154, 216, 0) 2px;
+    font-size: 14px;
+}
+
+.navbar-nav.my-links .nav-link.active {
+
+    color: rgb(0, 154, 216);
+    border-radius: 30px;
+    border: solid rgb(0, 154, 216) 2px;
+
+}
+
+.navbar-nav.my-links .nav-link:hover,
+.navbar-nav.my-links .nav-link:focus {
+
+    border-color: rgb(0, 154, 216);
+
+}
+
+form {
+    background-color: #1E202B;
+}
+
+form input {
+    outline: none;
+    color: white;
+
+
+}
+
+form button {
+    background-color: rgb(0, 154, 216) !important;
+    padding-inline: 40px !important;
+}
+
+.card {
+    color: rgb(191, 193, 200);
+}
+
+.card.current h2 {
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 135px;
+}
+
+
+
+.card.current .condation-icon {
+    width: 90px;
+    height: 90px;
+}
+
+.card.current ul img {
+    width: 21px;
+    height: 21px;
+}
+
+.card .condation {
+    color: rgb(0, 154, 216);
+}
+
+.card.odd .card-header {
+    background-color: #2D303D;
+}
+
+.card.odd .card-body {
+    background-color: #323544;
+}
+
+.card.even .card-header {
+    background-color: #222530;
+}
+
+.card.even .card-body {
+    background-color: #262936;
+}
+
+.banner {
+    background-image: url(../images/banner.png);
+    background-size: cover;
+    min-height: 350px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+footer {
+
+    background-color: rgb(38, 41, 54)
+}
+
+
+footer p {
+    color: rgb(191, 193, 200);
+    font-size: 14px;
+    font-weight: 300;
+}
+
+footer ul span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #1E202B;
+    color: rgb(0, 154, 216);
+    transition: all 0.5s;
+}
+
+footer ul span:hover {
+    background-color: rgb(0, 154, 216);
+    color: white;
+}
+
+
+
+
+.circles span {
+    width: 20px;
+    height: 20px;
+    background-color:rgb(0, 154, 216) ;
+
+}
+
+.modal-body p {
+    font-family: "Bree Serif", serif;
+    font-size: 1.3125rem;
+    line-height: 1.6875rem;
+}
+
+.modal-body .rules {
+    font-size: 1.125rem;
+}
+
+.modal-body .rules i {
+    color:rgb(0, 154, 216) ;
+}
