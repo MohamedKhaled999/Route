@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="images/logo-sm.png" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nerko+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body data-theme="light">
+    <main class="vh-100 d-flex justify-content-around align-items-center">
+      <div class="container m-4 shadow-lg rounded overflow-hidden register-area">
+        <div class="row">
+          <div class="col-md-5 register-img p"></div>
+          <div class="col-md-7 py-4">
+            <div class="text-center pb-5">
+              <img src="images/logo-sm.png" alt="logo" />
+              <h1 class="">Register to Game Over</h1>
+            </div>
+            <form action="" class="form d-flex flex-column gap-3 px-2">
+              <div class="d-flex gap-3">
+                <div class="position-relative flex-grow-1">
+                  <input
+                    class="fw-bolder form-control "
+                    type="text"
+                    name="fName"
+                    id="fName"
+                    placeholder="First Name"
+                  />
+
+                  <div class="invalid-tooltip">
+                    <ul>
+                      <li>First Name Is Required</li>
+                      <li>Minmum Length 2 and Maxmum 20</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="position-relative flex-grow-1">
+                  <input
+                    class="fw-bolder form-control "
+                    type="text"
+                    name="lName"
+                    id="lName"
+                    placeholder="Last Name"
+                  />
+
+                  <div class="invalid-tooltip">
+                    <ul>
+                      <li>Last Name Is Required</li>
+                      <li>Minmum Length 2 and Maxmum 20</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="position-relative">
+                <input
+                  class="fw-bolder  form-control "
+                  type="text"
+                  name="emali"
+                  id="email"
+                  placeholder="Email Address"
+                />
+                <div class="invalid-tooltip">
+                  <ul>
+                    <li>Email Is Required</li>
+                    <li>InValid Email Formate</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="position-relative">
+                <input
+                  class="fw-bolder  form-control "
+                  type="password"
+                  name="pass"
+                  id="pass"
+                  placeholder="password"
+                />
+                <div class="invalid-tooltip">
+                  <ul>
+                    <li>Password Is Required</li>
+                    <li>
+                      Minimum eight characters, at least one letter and one
+                      number
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class=" position-relative">
+                <input
+                  class="fw-bolder form-control "
+                  type="number"
+                  name="age"
+                  id="age"
+                  min="10"
+                  max="80"
+                  placeholder="Enter Age"
+                />
+                <div class="invalid-tooltip">
+                  <ul>
+                    <li>Age Is Required</li>
+                    <li>Minimum 10 Maxmum 80</li>
+                  </ul>
+                </div>
+              </div>
+              <button
+                id="signupBtn"
+                class="btn py-1 shadow-sm"
+                type="submit"
+
+              >
+                Register
+              </button>
+
+              <p class="text-center pt-2 fw-bold small">
+                Already a member?
+                <a class="link-secondary text-decoration-none" href="#"
+                  >LogIn >
+                </a>
+              </p>
+            </form>
+          </div>    
+        </div>
+      </div>
+
+      <span class="position-fixed bottom-0 end-0 m-3 z-3">
+        <i role="button" id="mode" class="fa-regular fa-moon fa-xl p-3"></i>
+     </span>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/register.js"></script>
+  </body>
+</html>
