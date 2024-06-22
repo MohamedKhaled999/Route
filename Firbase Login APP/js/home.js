@@ -92,7 +92,7 @@ const handleUsersChats = () => {
                   <img class="bg-danger rounded-circle" src="${chat[1].userInfo.photoURL}" alt=""  />
                   <div>
                     <span class="user-chat-name fw-bold">${chat[1].userInfo.displayName}</span>
-                    <p class="last-message p-0 m-0 text-muted">${chat[1].lastMessage?.text}</p>
+                    <p class="last-message p-0 m-0 text-muted">${chat[1].lastMessage?.text?chat[1].lastMessage?.text:"new freind"}</p>
                   </div>
                 </div>
               </li>`;
@@ -233,8 +233,10 @@ const handleChat = async () => {
   });
 };
 
-sendBtn.addEventListener("click", () => {
-  handleSend();
+sendBtn.addEventListener("click", async() => {
+  
+  await handleSend();
+  messageContainer.scrollTo(0, messageContainer.scrollHeight);
 });
 
 const handleSend = async () => {

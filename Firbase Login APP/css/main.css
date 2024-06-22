@@ -2,6 +2,9 @@ body{
 
     background-color: #24353F;
 }
+*{
+    scroll-behavior: smooth;
+}
 
 .w-70{
     width: 70%;
@@ -12,6 +15,9 @@ body{
 
 .chat-content,.users-chats{
     max-height: 90%;
+}
+.min-h-30{
+    min-height: 30%;
 }
 
 
@@ -40,3 +46,22 @@ img{
 li:hover,.search-item:hover {
    background-color: rgba(0, 0, 0, 0.422) ;
 }
+
+
+
+/*       ScrollBar 1        */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color:   rgb(78, 72, 72) !important;
+}
+/*       ScrollBar 2        */
