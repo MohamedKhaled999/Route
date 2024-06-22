@@ -197,7 +197,8 @@ let person55 = {
     gender: "male",
   },
   test: function () {
-    function testIn() {  //----------> create foق itself new context
+    function testIn() {
+      //----------> create foق itself new context
       console.log("5- this in function in another fun. in obj ", this);
 
       // ولا لا  (use strict) علي حسب ما استخدم
@@ -208,7 +209,6 @@ let person55 = {
   },
 };
 person55.test();
-
 
 // SOLVE PROBLEM FRO NUM.5 before ES6
 
@@ -222,8 +222,9 @@ let person55A = {
     gender: "male",
   },
   test: function () {
-    let that =this //------>point to obj
-    function testIn() {  //----------> create foق itself new context
+    let that = this; //------>point to obj
+    function testIn() {
+      //----------> create foق itself new context
       console.log("5- this in function in another fun. in obj ", this);
       console.log("5- solve the problem ", that);
 
@@ -236,115 +237,148 @@ let person55A = {
 };
 person55A.test();
 
-
-
-let nums =[10,20,30,40,50,60,70] 
-
+let nums = [10, 20, 30, 40, 50, 60, 70];
 
 for (const item of nums) {
-  console.log(item)
+  console.log(item);
 }
-
 
 for (const key in person55A) {
-  console.log(key)
+  console.log(key);
 }
-
 
 let personMap = new Map();
 
-personMap.set("name","ahmed")
-personMap.set("age",30)
-personMap.set("salary",5000)
-personMap.set("isMarried",false)
+personMap.set("name", "ahmed");
+personMap.set("age", 30);
+personMap.set("salary", 5000);
+personMap.set("isMarried", false);
 
-console.log(personMap) 
-console.log(personMap.get('salary')) 
-console.log(personMap.has('age')) 
-console.log(personMap.values()) 
+console.log(personMap);
+console.log(personMap.get("salary"));
+console.log(personMap.has("age"));
+console.log(personMap.values());
 
 for (const iterator of personMap.values()) {
-  console.log(iterator)
+  console.log(iterator);
 }
-console.log(personMap.keys()) 
-console.log(personMap.entries()) 
+console.log(personMap.keys());
+console.log(personMap.entries());
 
 for (const entery of personMap) {
-  console.log(entery) //array of [key , value]
+  console.log(entery); //array of [key , value]
 }
-for (const [x,y] of personMap) {
-  console.log(x,y) //array of [key , value]
+for (const [x, y] of personMap) {
+  console.log(x, y); //array of [key , value]
 }
 
+console.log(personMap.delete("salary"));
 
-console.log(personMap.delete('salary')) 
+console.log(personMap);
 
-console.log(personMap) 
+personMap.clear();
 
-personMap.clear()
-
-console.log(personMap) 
-
+console.log(personMap);
 
 for (const iterator of personMap) {
-
-  console.log("------>",iterator)
-  
+  console.log("------>", iterator);
 }
 
 // 1- obj -----> Map
 //map taake only entries
 
-let pMap= new Map(Object.entries(person55A))
+let pMap = new Map(Object.entries(person55A));
 
 // 2- map ---> obj
-Object.fromEntries(pMap)
-
-
+Object.fromEntries(pMap);
 
 // -----------------------------------------
 
 let per1 = {
   fullName: "ahmed",
   age: 30,
-  salary: 3000
-}
+  salary: 3000,
+};
 
-delete per1.salary
-console.log(per1)
+delete per1.salary;
+console.log(per1);
 
-console.log("salary" in per1)
+console.log("salary" in per1);
 
+let nums2 = new Set();
+nums2.add(10);
+nums2.add(20);
+nums2.add(30);
+nums2.add(40);
+nums2.add(40);
+nums2.add(40);
+nums2.add(40);
+nums2.add(40);
 
-
-
-
-
-let nums2 =new Set();
-nums2.add(10)
-nums2.add(20)
-nums2.add(30)
-nums2.add(40)
-nums2.add(40)
-nums2.add(40)
-nums2.add(40)
-nums2.add(40)
-
-console.log(nums2) //[ 10, 20, 30, 40 ]
-console.log(nums2.has(30)) 
-console.log(nums2.delete(50)) 
-console.log(nums2.values()) 
-console.log(nums2.keys()) 
+console.log(nums2); //[ 10, 20, 30, 40 ]
+console.log(nums2.has(30));
+console.log(nums2.delete(50));
+console.log(nums2.values());
+console.log(nums2.keys());
 
 // -------------
 
 // array ---> set
-const letters = new Set(["a","b","c"]);
+const letters = new Set(["a", "b", "c"]);
 
 // set ---> array
 
-Array.from(letters)
+Array.from(letters);
 
 //another way
 let yy = [...letters];
+
+let pro = new Promise((resolve, reject) => {
+  let x = 2;
+  if (x == 1) {
+    resolve("success");
+    return 55;
+  } else {
+    reject("failed");
+  }
+});
+
+let data2 = pro
+  .then((meg) => {
+    console.log("inside then --->", meg);
+    return 55;
+  })
+  .then((x) => {
+    console.log(5);
+  })
+  .catch((mse) => {
+    console.log(mse);
+  });
+console.log(pro);
+
+let promiseRes = fetch("https://forkify-api.herokuapp.com/api/search?q=corn").json();
+
+
+
+fetch("https://forkify-api.herokuapp.com/api/search?q=corn")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+  async function getRecipes2() {
+    var response = await fetch("https://forkify-api.herokuapp.com/api/search?q=corn");//----by defuate is GET 
+    var data = await response.json();//-----------------------------------------------> await لازم تعمل 
+  
+      console.log(data )
+  }
+
+
+
+async function testMo222(params) {
+  let data2 = await pro
+  
+  
+console.log(pro);
+}
+
+
 
