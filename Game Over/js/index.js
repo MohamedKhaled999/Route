@@ -1,6 +1,6 @@
 //?===========================Golabl======================>
 const inputs = document.querySelectorAll("input");
-const registerBtn = document.getElementById("registerBtn");
+const logInBtn = document.getElementById("logInBtn");
 const registeForm = document.querySelector("form");
 const myModal = new bootstrap.Modal(document.getElementById("myModal"));
 const errorMessage = document.getElementById("errorMessage");
@@ -33,8 +33,7 @@ document.getElementById("mode").addEventListener("click", function () {
   }
 });
 
-
-registerBtn.addEventListener("click", () => {});
+logInBtn.addEventListener("click", () => {});
 
 registeForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -51,28 +50,19 @@ registeForm.addEventListener("input", (e) => {
 //!===========================Functions======================>
 function setForm() {
   const user = {
-    first_name: inputs[0].value,
-    last_name: inputs[1].value,
-    email: inputs[2].value,
-    password: inputs[3].value,
-    age: inputs[4].value,
+    email: inputs[0].value,
+    password: inputs[1].value,
   };
   console.log(user);
-  if (
-    isValid(inputs[0]) &&
-    isValid(inputs[1]) &&
-    isValid(inputs[2]) &&
-    isValid(inputs[3]) &&
-    isValid(inputs[4])
-  ) {
-    sendRegisteForm(user);
+  if (isValid(inputs[0]) && isValid(inputs[1])) {
+    sendLoginForm(user);
   } else {
-    console.log("errrorr in regiseter form");
+    console.log("errrorr in login form");
   }
 }
-async function sendRegisteForm(user) {
+async function sendLoginForm(user) {
   try {
-    const api = await fetch("https://movies-api.routemisr.com/signup", {
+    const api = await fetch("https://movies-api.routemisr.com/signin", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -85,9 +75,10 @@ async function sendRegisteForm(user) {
     console.log(data);
 
     if (data.message == "success") {
-      window.location = "./index.html";
+      localStorage.setItem("uToken", data.token);
+      window.location = "./home.html";
     } else {
-      errorMessage.innerHTML = data.errors?.email.message;
+      errorMessage.innerHTML = data.message;
       myModal.show();
     }
   } catch (error) {
@@ -96,6 +87,7 @@ async function sendRegisteForm(user) {
   }
 }
 
+//*===========================Validation======================>
 function isValid(ele) {
   console.log(ele);
   var regex;
@@ -135,5 +127,3 @@ function isValid(ele) {
     return false;
   }
 }
-
-//*===========================Validation======================>

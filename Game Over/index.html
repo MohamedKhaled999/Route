@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <title>LogIn</title>
+    <meta
+      name="keywords"
+      content="game wibsite  onlie game  game over العاب  موقع العاب "
+    />
+
+    <link rel="shortcut icon" href="images/logo-sm.png" type="image/x-icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nerko+One&display=swap"
       rel="stylesheet"
     />
 
@@ -17,237 +23,107 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary p-4">
-      <div class="container my-2">
-        <a class="navbar-brand d-flex gap-2" href="#">
-          <img src="images/logo.png" alt="Weather App" />
-          <div>
-            <h1 class="m-0 p-0 text-white">Weather</h1>
-            <span class="p-0 m-0">tagline goes here</span>
+  <body data-theme="light">
+    <main class="vh-100 d-flex justify-content-around align-items-center">
+      <div
+        class="container m-4 shadow-lg rounded overflow-hidden register-area"
+      >
+        <div class="row">
+          <div class="col-md-5 login-img p"></div>
+          <div class="col-md-7 py-4">
+            <div class="text-center pb-5">
+              <img src="images/logo-sm.png" alt="logo" />
+              <h1 class="">LogIn to Game Over</h1>
+            </div>
+            <form action="" class="form d-flex flex-column gap-3 px-2">
+              
+              <div class="position-relative">
+                <input
+                  class="fw-bolder form-control"
+                  type="text"
+                  name="emali"
+                  id="email"
+                  placeholder="Email Address"
+                />
+                <div class="invalid-tooltip">
+                  <ul>
+                    <li>Email Is Required</li>
+                    <li>InValid Email Formate</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="position-relative">
+                <input
+                  class="fw-bolder form-control"
+                  type="password"
+                  name="pass"
+                  id="pass"
+                  placeholder="password"
+                />
+                <div class="invalid-tooltip">
+                  <ul>
+                    <li>Password Is Required</li>
+                    <li>
+                      Minimum eight characters, at least one letter and one
+                      number
+                    </li>
+                  </ul>
+                </div>
+              </div>
+             
+              <button id="logInBtn" class="btn py-1 shadow-sm" type="submit">
+                Register
+              </button>
+
+              <p   class="text-center pt-2 fw-bold small">
+                Not a member yet?
+                <a class="link-secondary text-decoration-none" href="register.html"
+                  >Create Account  >
+                </a>
+              </p>
+            </form>
           </div>
-        </a>
-        <button
-          class="navbar-toggler bg-info"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon "></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav my-links ms-auto text-center">
-            <li class="nav-item ms-3 p-2">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item ms-3 p-2">
-              <a class="nav-link" href="#">News</a>
-            </li>
-            <li class="nav-item ms-3 p-2">
-              <a class="nav-link" href="#">Live cameras</a>
-            </li>
-            <li class="nav-item ms-3 p-2">
-              <a class="nav-link" href="#">Photos</a>
-            </li>
-            <li class="nav-item ms-3 p-2">
-              <a class="nav-link">Contact</a>
-            </li>
-          </ul>
         </div>
       </div>
-    </nav>
 
-    <main class="pt-5 position-relative">
-      <div class="banner"></div>
-      <div class="container">
-        <form action="" class="m-auto position-relative rounded-pill p-2 my-4">
-          <input
-            class="fs-6 form-control-lg ps-4 w-100 bg-transparent border flex-grow-1 border-0"
-            type="text"
-            name="city"
-            id="cityInput"
-            placeholder="Find your location..."
-            autocomplete="off"
-          />
-          <button
-          id="findBtn"
-            class="position-absolute btn text-white rounded-pill end-0 top-0 bottom-0 m-1"
-          >
-
-            Find
-          </button>
-        </form>
-
-        <div class="row my-5 g-0 rounded-top rounded-bottom overflow-hidden">
-          <div class="col-lg-4">
-            <div class="card odd current border-0">
-              <div class="card-header rounded-0 d-flex justify-content-between">
-                <span>Thursday</span>
-                <span>20June</span>
+      <span class="position-fixed bottom-0 end-0 m-3 z-3">
+        <i role="button" id="mode" class="fa-regular fa-moon fa-xl p-3"></i>
+      </span>
+      <div id="myModal" class="modal " tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content p-4 modal-color">
+            <div class="modal-header border-0 p-0 pb-1">
+              <div class="circles d-flex gap-1 ">
+                <span class=" rounded-circle"></span>
+                <span class=" rounded-circle"></span>
+                <span class=" rounded-circle"></span>
               </div>
-              <div class="card-body d-flex flex-column gap-4">
-                <span id="city">Cairo </span>
-                <div class="text-white d-flex flex-wrap align-items-center">
-                  <h2>26.2<sup>o</sup>C</h2>
-                  <img
-                    class="condation-icon"
-                    src="images/113 (1).png"
-                    alt=" condation icon"
-                  />
-                </div>
-                <span class="condation">Clear</span>
-                <ul class="list-unstyled d-flex gap-2">
-                  <li><img src="images/icon-umberella@2x.png" alt="humidity" /> 20%</li>
-                  <li>
-                    <img src="images/icon-wind@2x.png" alt="wind" /> 18km/h
-                  </li>
-                  <li>
-                    <img src="images/icon-compass@2x.png" alt="compass" /> East
-                  </li>
-                </ul>
-              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+              
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card even border-0 h-100">
-              <div class="card-header rounded-0 d-flex justify-content-center">
-                <span>Thursday</span>
+            <div class="modal-body p-0 pt-2 ">
+              <div class="text-center pb-2">
+                <i class="fa-solid fs-1 fa-circle-exclamation opacity-50"></i>
               </div>
-              <div
-                class="card-body py-4 d-flex flex-column gap-4 align-items-center justify-content-center"
-              >
-                <img
-                  class="condation-icon"
-                  src="images/113 (1).png"
-                  alt=" condation icon"
-                />
-
-                <h3 class="fw-bolder text-white max-c">26.2<sup>o</sup>C</h3>
-                <span class="fw-lighter min-c">20.4<sup>o</sup>C</span>
-                <span class="condation">Sunny</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card odd border-0 h-100">
-              <div class="card-header rounded-0 d-flex justify-content-center">
-                <span>Thursday</span>
-              </div>
-              <div
-                class="card-body py-4 d-flex flex-column gap-4 align-items-center justify-content-center"
-              >
-                <img
-                  class="condation-icon"
-                  src="images/113 (1).png"
-                  alt=" condation icon"
-                />
-
-                <h3 class="fw-bolder text-white max-c">26.2<sup>o</sup>C</h3>
-                <span class="fw-lighter min-c">20.4<sup>o</sup>C</span>
-                <span class="condation">Sunny</span>
-              </div>
+              <p class=" text-center">
+                Sorry , Something is worng ! 
+              </p>
+              <p id="errorMessage" class="fw-bolder  text-center">
+                
+              </p>
+  
+            
             </div>
           </div>
         </div>
       </div>
     </main>
-
-    <footer class="py-5">
-      <div class="container">
-        <div class="row align-items-center ">
-          <form
-            action=""
-            class="col-md-8  position-relative rounded-pill py-2 my-4"
-          >
-            <input
-              class="fs-6 form-control-lg ps-4 w-100 bg-transparent border flex-grow-1 border-0"
-              type="text"
-              name="city"
-              placeholder="Enter your email to subscribe..."
-            />
-            <button
-              class="position-absolute btn text-white  px-3 rounded-pill end-0 top-0 bottom-0 m-1"
-            >
-              Subscribe
-            </button>
-          </form>
-
-          <ul class="col-md-3 list-unstyled offset-md-1 d-flex  gap-1">
-            <li>
-              <span
-                class="justify-content-center align-items-center rounded-circle"
-              >
-                <i class="fa-brands fa-facebook-f fs-5"></i>
-              </span>
-            </li>
-            <li>
-              <span
-                class="justify-content-center align-items-center rounded-circle"
-              >
-                <i class="fa-brands fa-twitter fs-5"></i>
-              </span>
-            </li>
-            <li>
-              <span
-                class="justify-content-center align-items-center rounded-circle"
-              >
-                <i class="fa-brands fa-google-plus-g fs-5"></i>
-              </span>
-            </li>
-            <li>
-              <span
-                class="justify-content-center align-items-center rounded-circle"
-              >
-                <i class="fa-brands fa-pinterest fs-5"></i>
-              </span>
-            </li>
-          </ul>
-        </div>
-        <p class="">
-          Copyright 2014 Company name. Designed by Themezy. All rights reserved
-        </p>
-      </div>
-    </footer>
-
-    <div id="myModal" class="modal " tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered ">
-        <div class="modal-content p-4 bg-dark">
-          <div class="modal-header border-0 p-0 pb-1">
-            <div class="circles d-flex gap-1 ">
-              <span class=" rounded-circle"></span>
-              <span class=" rounded-circle"></span>
-              <span class=" rounded-circle"></span>
-            </div>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body p-0 pt-3">
-            <p class="text-white text-center">
-              Sorry , Something is worng ! 
-            </p>
-
-            <ul class="rules list-unstyled m-0 text-white">
-              <li>
-                <i class="fa-regular fa-circle-right p-2"></i>
-                please check your connection
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-right p-2"></i>
-                please check if city name is correct
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>

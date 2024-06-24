@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="js/auth.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <meta
+      name="keywords"
+      content="game wibsite  onlie game  game over العاب  موقع العاب "
+    />
+
+    <link rel="shortcut icon" href="images/logo-sm.png" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comforztaa:wght@300..700&family=Nerko+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body data-theme="light">
+    <nav class="navbar navbar-expand-lg nav-bg border-bottom border-dark ">
+      <div class="container">
+        <h5 class="text-uppercase mb-0">
+          <a class="navbar-brand d-flex align-items-center fs-4" href="#">
+            <img
+              src="images/logo-sm.png"
+              alt="Logo"
+              style="max-width: 40px"
+              class="d-inline-block align-text-top"
+            />
+            Game Over
+          </a>
+        </h5>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul id="menu" class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" data-category="MMORPG">MMORPG</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-category="SHOOTER">SHOOTER</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-category="SAILING">SAILING</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-category="PERMADEATH">PERMADEATH</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-category="SUPERHERO">SUPERHERO </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-category="PIXEL">PIXEL </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-category="PVP">PVP </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-category="ACTION">ACTION </a>
+            </li>
+          </ul>
+
+          <div id="logoutBtn" role="button" class="nav-item">
+            <a class="nav-link"> LogOut</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="">
+      <div class="container">
+        <h1 class="h3 py-3">Top Free Moba Games For PC And Browser In 2023!</h1>
+        <div class="row g-4">
+          
+        </div>
+      </div>
+      <span class="position-fixed bottom-0 end-0 m-3 z-3">
+        <i role="button" id="mode" class="fa-regular fa-moon fa-xl p-3"></i>
+      </span>
+      <div id="myModal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content p-4 modal-color">
+            <div class="modal-header border-0 p-0 pb-1">
+              <div class="circles d-flex gap-1">
+                <span class="rounded-circle"></span>
+                <span class="rounded-circle"></span>
+                <span class="rounded-circle"></span>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-0 pt-2">
+              <div class="text-center pb-2">
+                <i class="fa-solid fs-1 fa-circle-exclamation opacity-50"></i>
+              </div>
+              <p class="text-center">Sorry , Something is worng !</p>
+              <p id="errorMessage" class="fw-bolder text-center"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="loading" class="d-flex position-fixed top-0 bg-secondary w-100 h-100 bg-opacity-75 d-flex justify-content-center align-items-center d-none">
+        <span class="loader"></span>
+      </div>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

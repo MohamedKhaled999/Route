@@ -2,8 +2,10 @@
 [data-theme="dark"] {
     --main-color: #272b30;
     --seconde-color: #32383e;
+    --modal-color: #32383e;
     --color-text: #fff;
     --btn-main-color: #272729;
+
 }
 
 [data-theme="light"] {
@@ -11,6 +13,7 @@
     --seconde-color: #909396;
     --color-text: #000;
     --btn-main-color: #414550;
+    --modal-color: #fff;
 }
 
 main button.btn {
@@ -41,6 +44,10 @@ main button.btn:hover {
 
 .badge-color {
     background-color: var(--seconde-color);
+}
+
+.modal-color {
+    background-color: var(--modal-color);
 }
 
 /***** End theme customize *****/
@@ -80,7 +87,26 @@ span {
     transition: background-color 0.5s, color 0.2s;
 }
 
+.circles span {
+    width: 20px;
+    height: 20px;
+    background-color: var(--main-color);
+    border: #474848 1px solid;
 
+
+}
+
+.circles span:nth-child(1) {
+    background-color: var(--btn-main-color);
+
+
+}
+
+.circles span:nth-child(3) {
+    background-color: var(--seconde-color);
+
+
+}
 
 /* ***************** end Global******************* */
 
@@ -92,3 +118,101 @@ span {
 }
 
 /***** End Register *****/
+/***** Start Login *****/
+.login-img {
+    background-image: url(../images/login.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/***** End Login *****/
+
+
+/**** Start Home ******/
+
+.nav-bg {
+    background-color: var(--main-color);
+}
+
+.nav-item .nav-link {
+    font-size: 14px;
+}
+
+.nav-item .nav-link.active,
+.nav-item .nav-link:hover {
+    color: #09c !important;
+    transition: color 0.5s;
+}
+
+.highlight-badge {
+
+    background-color: rgba(13, 110, 253, 1);
+    color: #fff !important;
+
+}
+
+/* .highlight-badge:hover{
+    
+    background-color: rgba(13, 110, 253,1);
+    color: #fff !important;
+    transition: all 0.4s;
+ } */
+main .card {
+    filter: grayscale(0.7);
+    transition: transform 0.5s, filter 0.5s 0.1s;
+}
+
+main .card:hover {
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
+
+.card-footer span {
+    font-size: 10px;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border-left: 4px solid #FF3D00;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/**** End Home ******/
+
+/**** Start Details ******/
+.details {
+    background-color: #272729cc !important;
+ 
+    backdrop-filter: blur(5px);
+ }
+
+/**** End Details ******/
