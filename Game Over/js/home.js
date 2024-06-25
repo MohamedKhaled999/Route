@@ -47,7 +47,6 @@ menu.addEventListener("click", (e) => {
   }
 });
 logoutBtn.addEventListener('click',()=>{
-  localStorage.removeItem()
   localStorage.removeItem("uToken");
 
   window.location ='./index.html'
