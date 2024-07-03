@@ -64,14 +64,18 @@ body {
 
 /* !=================form=================== */
 
-form input.form-control {
+label{
+    cursor: pointer;
+}
+
+form input.form-control,label.form-control{
     background-color: transparent;
     border: none;
     color: white;
     box-shadow: 0 0 5px black;
 }
 
-form input.form-control:focus {
+form input.form-control:focus,label:focus,label:active {
     background-color: transparent;
     color: white;
     box-shadow: 0 0 5px .25rem gold;
@@ -79,6 +83,16 @@ form input.form-control:focus {
 
 input::placeholder {
     color: white !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #fdfdfd;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: 0 0 5px .25rem gold;
+
 
 }
 

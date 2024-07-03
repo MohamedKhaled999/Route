@@ -1,60 +1,72 @@
-// import {
-//   getAuth,
-//   createUserWithEmailAndPassword,
-// } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { auth, db } from "./firebaseAppConfig.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+export const handleLogin = async (user) => {
+  console.log(user);
 
-// import { myAuth } from  "./index.js";
+  try {
+    const cradintials = await signInWithEmailAndPassword(
+      auth,
+      user.email,
+      user.password
+    );
+    console.log("cradintials", cradintials);
+    if (auth.currentUser) {
+      console.log("currentUser", auth.currentUser);
+      return auth.currentUser;
+    }
+    // window.location = "./home.html";
+    loginForm.reset();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
+const handleSignUp = async (user) => {
+  try {
+    const cradintials = await createUserWithEmailAndPassword(
+      auth,
+      user.email,
+      user.password
+    );
+    console.log("cradintials", cradintials);
 
-// export const handleAuth = (app,doc) => {
+    let imgURL = null;
+    const tempImg =
+      "https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611710.jpg?w=740&t=st=1717969382~exp=1717969982~hmac=fd3fb60949a48efede188c4a7ebec3d55297a32041a4e1ac42d894ad74be203b";
 
-//  var auth = getAuth(app)
+    await updateProfile(auth.currentUser, {
+      displayName: user.name,
+      photoURL: imgURL ? imgURL : tempImg,
+    })
+      .then(async () => {
+        console.log("Profile updated!");
 
+        // Profile updated!
+        // ...
+      })
+      .catch((error) => {
+        console.log("Profile  not updated!", error);
 
-//   console.log("sss",auth);
-//   // handleLogin(auth, doc);
-//   // handleSignUp(auth, doc);
-//   // handleLogOut(auth);
-// };
+        // An error occurred
+        // ...
+      });
 
+    await setDoc(doc(db, "users", auth.currentUser.uid), {
+      uid: auth.currentUser.uid,
+      displayName: user.name,
+      email: user.email,
+      photoURL:
+        "https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611710.jpg?w=740&t=st=1717969382~exp=1717969982~hmac=fd3fb60949a48efede188c4a7ebec3d55297a32041a4e1ac42d894ad74be203b",
+    });
 
-// export const handleSignUp = (doc) => {
-//   const signUpBtn = doc.getElementById("signUpBtn");
-//   const signUpForm = doc.getElementById("signUpForm");
-//   console.log("ddfvgfdsdf", signUpForm);
-//   console.log(signUpBtn);
-
-//   signUpBtn.addEventListener("click", async (e) => {
-//     e.preventDefault();
-//     console.log(
-//       "sign Up",
-//       signUpForm.children[2].value,
-//       signUpForm.children[3].value
-//     );
-
-//     console.log(myAuth);
-
-//   });
-// };
-
-
-// export const handleLogin = (doc) => {
-//   const loginBtn = doc.getElementById("loginBtn");
-//   const loginForm = doc.getElementById("loginForm");
-//   console.log(loginForm.children[1].value);
-//   loginBtn.addEventListener("click", async (e) => {
-//     e.preventDefault();
-//     console.log(
-//       "LOG IN",
-//       loginForm.children[1].value,
-//       loginForm.children[2].value
-//     );
-
-//   });
-// };
-
-
-
-
-
+    await setDoc(doc(db, "usersChats", auth.currentUser.uid), {});
+  } catch (error) {
+    console.log("error", error);
+  }
+};
