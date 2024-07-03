@@ -1,0 +1,289 @@
+/* ?============Global=========== */
+body {
+    background-image: url(../images/1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+
+}
+
+@keyframes plane {
+    0% {
+        translate: 0 0;
+    }
+
+    20% {
+        translate: 500% 400%;
+        rotate: 270deg;
+    }
+
+    40% {
+        translate: -500% -250%;
+        rotate: 270deg;
+    }
+
+    45% {
+        translate: -500% -250%;
+        rotate: 90deg;
+    }
+
+    60% {
+        translate: 400% 700%;
+        rotate: 90deg;
+    }
+
+    80% {
+        translate: -200% 0%;
+        rotate: -45deg;
+    }
+
+    100% {
+        translate: -0% 0%;
+        rotate: 0;
+    }
+
+}
+
+.outer-bg img[alt="plane"] {
+
+    animation: plane 7s ease-in-out infinite;
+}
+
+.outer-bg {
+    background-image: url(../images/juicy-red-paper-airplane.gif);
+    background-position: top right, bottom right;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+
+}
+
+/* !=================form=================== */
+
+form input.form-control {
+    background-color: transparent;
+    border: none;
+    color: white;
+    box-shadow: 0 0 5px black;
+}
+
+form input.form-control:focus {
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0 5px .25rem gold;
+}
+
+input::placeholder {
+    color: white !important;
+
+}
+
+form p a {
+    color: #21264D !important;
+    transition: all 0.5s;
+}
+
+form p a:hover {
+    color: #e4f21fd6 !important;
+}
+
+.container {
+
+    width: 1000px;
+    height: 600px;
+    border: rgba(255, 255, 255, 0.4) solid 2px;
+    border-radius: 30px;
+    overflow: hidden !important;
+}
+
+/* *===================motions==================== */
+
+@keyframes left-right {
+    to {
+        translate: 20px;
+    }
+}
+
+@keyframes up-dwon {
+    to {
+        translate: 0 20px;
+    }
+}
+
+@keyframes scale-down {
+    to {
+        scale: 0.9;
+    }
+}
+
+@keyframes scale-up {
+    to {
+        scale: 1.1;
+    }
+}
+
+@keyframes scale-up-shadow {
+    to {
+        scale: 1.1;
+        filter: drop-shadow(0 0 20px gold);
+    }
+}
+
+@keyframes zigzag {
+    0% {
+
+        translate: -500% -400%;
+    }
+
+    33% {
+        translate: -500% -400%;
+
+    }
+
+    66% {
+        transform: translate(VALUE, VALUE);
+    }
+
+    100% {
+        translate: 500% 400%;
+
+    }
+}
+
+
+.motions .main-image {
+    animation: scale-up 5s ease-in-out alternate infinite;
+}
+
+.motions img[alt="coin"] {
+    animation: scale-up 3s ease-in-out alternate infinite;
+}
+
+.motions img[alt="coin"] {
+    animation: scale-down 3s ease-in-out alternate infinite;
+}
+
+.motions img[alt="spring"] {
+    animation: scale-down 3s ease-in-out alternate infinite;
+}
+
+.motions img[alt="dots"] {
+    animation: scale-up 3s ease-in-out alternate infinite;
+}
+
+.motions img[alt="stars"] {
+    animation: scale-up-shadow 3s ease-in-out alternate infinite;
+}
+
+.motions img[alt="cloud"] {
+    animation: left-right 3s ease-in-out alternate infinite;
+}
+
+.motions img[alt="rocket"] {
+    animation: up-dwon 3s ease-in-out alternate infinite;
+}
+
+
+
+.signin-form,
+.signup-form {
+    left: -50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: left 0.8s 0.2s, opacity 0.8s !important;
+}
+
+.show {
+    left: 50%;
+    opacity: 1;
+}
+
+.unshow {
+    animation: overlap 1s 0s ease-out backwards reverse;
+}
+
+
+main .container .row {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    overflow: hidden !important;
+    border-radius: 25px;
+
+}
+
+.motions {
+    background: rgba(255, 255, 255, 0.3);
+    position: relative;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius: 0 30% 20% 0;
+    transition: border-radius 0.7s;
+    overflow: hidden !important;
+
+
+}
+
+.motions img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 100%;
+}
+
+.my-btns button {
+    background-color: rgba(255, 255, 255, 0.214);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.301);
+    color: white;
+    transition: background-color 0.8s;
+
+}
+
+.btn.selected {
+    background-color: #21264D !important;
+    border: 0;
+}
+
+
+form button.btn {
+    background-color: #21264D;
+    color: white;
+    gap: 10px;
+    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.401);
+    transition: all 0.5s;
+
+}
+
+form button.btn:hover {
+    background-color: #21264d24;
+    gap: 30px;
+
+}
+
+/* !==========Media========= */
+@media (max-width:768px) and (min-width:0px) {
+    .container {
+        width: 95%;
+    }
+
+    .motions-container {
+        width: 0px !important;
+        display: none;
+    }
+
+    .motions {
+        width: 0px !important;
+        display: none;
+
+    }
+
+    .my-forms {
+        width: 100%;
+    }
+}

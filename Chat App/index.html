@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plane Chat</title>
+
+    <link rel="icon" href="images/icon.png" />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="overflow-hidden">
+    <main class="w-100 text-white">
+      <div class="container text-center sing-in-up outer-bg  ">
+        <img
+          src="images/paper-plane_753603 (1).png "
+          alt="plane"
+          class="align-self-center position-absolute "
+          style="width: 60px"
+        />
+
+        <div class="row about h-100  ">
+
+          <div class="col-md-6 p-0 overflow-hidden motions-container
+          ">
+            <div
+              class="motions d-flex flex-column justify-content-center align-items-center overflow-hidden"
+            >
+              <img
+                src="images/white-outline.png"
+                class="main-image"
+                alt="outline"
+              />
+              <img src="images/dots.png" alt="dots" />
+              <img src="images/coin.png" alt="coin" />
+              <img src="images/spring.png" alt="spring" />
+              <img src="images/rocket.png" alt="rocket" />
+              <!-- <img src="images/paper-plane_753603 (1).png " alt="plane" class=" align-self-center position-absolute" style="width: 60px;"  > -->
+              <img src="images/cloud.png" alt="cloud" />
+              <img src="images/stars.png" alt="stars" />
+            </div>
+          </div>
+          <div class="col-md-6 position-relative overflow-hidden my-forms ">
+            <div class="my-btns d-flex gap-2 py-4 justify-content-center pb-5">
+              <button id="signInBtn" class="rounded-pill px-4 btn selected">
+                Sign in
+              </button>
+              <button id="signUpBtn" class="rounded-pill px-4 btn">
+                Sign up
+              </button>
+            </div>
+            <div class="signin-form position-absolute show w-100 px-3">
+              <div class="text-center">
+                <img
+                  src="images/paper-plane_753603.png"
+                  width="100px"
+                  height="100px"
+                  alt="logo"
+                />
+                <h1 class="py-2">Sign In Plane Chat</h1>
+              </div>
+              <form action="" class="form d-flex flex-column gap-3 px-2">
+                <div class="position-relative">
+                  <input
+                    class="fw-bolder form-control"
+                    type="text"
+                    name="emali"
+                    id="email"
+                    placeholder="Email Address"
+                  />
+                  <div class="invalid-tooltip">
+                    <ul>
+                      <li>Email Is Required</li>
+                      <li>InValid Email Formate</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="position-relative">
+                  <input
+                    class="fw-bolder form-control"
+                    type="password"
+                    name="pass"
+                    id="pass"
+                    placeholder="password"
+                  />
+                  <div class="invalid-tooltip">
+                    <ul>
+                      <li>Password Is Required</li>
+                      <li>
+                        Minimum eight characters, at least one letter and one
+                        number
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <button
+                  id="SignInBtn"
+                  class="btn py-1 shadow-sm d-flex justify-content-center"
+                  type="submit"
+                >
+                  <span>Sign In</span>
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+
+                <p class="text-center pt-2 fw-bold small">
+                  Not a member yet?
+                  <a class="text-decoration-none" href="register.html"
+                    >Create Account >
+                  </a>
+                </p>
+              </form>
+            </div>
+
+            <div class="signup-form position-absolute w-100 px-3">
+              <div class="text-center">
+                <img
+                  src="images/paper-plane_753603.png"
+                  width="100px"
+                  height="100px"
+                  alt="logo"
+                />
+                <h1 class="py-2">Create Account</h1>
+              </div>
+              <form action="" class="form d-flex flex-column gap-3 px-2">
+                <div class="d-flex gap-3">
+                  <div class="position-relative flex-grow-1">
+                    <input
+                      class="fw-bolder form-control"
+                      type="text"
+                      name="fName"
+                      id="fName"
+                      placeholder="First Name"
+                    />
+
+                    <div class="invalid-tooltip">
+                      <ul>
+                        <li>First Name Is Required</li>
+                        <li>Minmum Length 2 and Maxmum 20</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="position-relative flex-grow-1">
+                    <input
+                      class="fw-bolder form-control"
+                      type="text"
+                      name="lName"
+                      id="lName"
+                      placeholder="Last Name"
+                    />
+
+                    <div class="invalid-tooltip">
+                      <ul>
+                        <li>Last Name Is Required</li>
+                        <li>Minmum Length 2 and Maxmum 20</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="position-relative">
+                  <input
+                    class="fw-bolder form-control"
+                    type="text"
+                    name="emali"
+                    id="email"
+                    placeholder="Email Address"
+                  />
+                  <div class="invalid-tooltip">
+                    <ul>
+                      <li>Email Is Required</li>
+                      <li>InValid Email Formate</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="position-relative">
+                  <input
+                    class="fw-bolder form-control"
+                    type="password"
+                    name="pass"
+                    id="pass"
+                    placeholder="password"
+                  />
+                  <div class="invalid-tooltip">
+                    <ul>
+                      <li>Password Is Required</li>
+                      <li>
+                        Minimum eight characters, at least one letter and one
+                        number
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="position-relative">
+                  <input
+                    class="fw-bolder form-control"
+                    type="number"
+                    name="age"
+                    id="age"
+                    min="10"
+                    max="80"
+                    placeholder="Enter Age"
+                  />
+                  <div class="invalid-tooltip">
+                    <ul>
+                      <li>Age Is Required</li>
+                      <li>Minimum 10 Maxmum 80</li>
+                    </ul>
+                  </div>
+                </div>
+                <button
+                  id="registerBtn"
+                  class="btn py-1 shadow-sm d-flex justify-content-center"
+                  type="submit"
+                >
+                  <span>Register</span>
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+
+                <p class="text-center pt-2 fw-bold small">
+                  Already a member?
+                  <a
+                    class="link-secondary text-decoration-none"
+                    href="./index.html"
+                    >LogIn >
+                  </a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>
