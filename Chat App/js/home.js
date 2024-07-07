@@ -25,6 +25,7 @@ let indexOfSlectedUserChat;
 let userChatsList = [];
 let searchedToAddFriend = [];
 const myModal = new bootstrap.Modal(document.getElementById("myModal"));
+const imgPreview =document.getElementById("imagePreviewer");
 const navContentAside = document.getElementById("navContentAside");
 const logoutBtn = document.getElementById("logOutBtn");
 const myUserChats = document.querySelector("ul.friends-list");
@@ -32,6 +33,7 @@ const addFriendBtn = document.getElementById("addFriendBtn");
 const sendBtn = document.getElementById("sendBtn");
 const messageOtsenderInput = document.getElementById("messageOtsender");
 const messageContainer = document.getElementById("messageContainer");
+const emojiPicker =  document.querySelector('emoji-picker');
 
 //!===========================when Start======================>
 await onAuthStateChanged(auth, (user) => {
@@ -71,7 +73,10 @@ document.addEventListener("keydown", (e) => {
         break;
       case "messageOtsender":
         console.log("messageOtsender");
-        handleSend();
+        if (e.target.value) {
+          handleSend();
+        }
+        
 
         break;
       case "newFriend":
@@ -138,6 +143,42 @@ document
       handleSend(url);
     }
   });
+
+  messageContainer.addEventListener('click',(e)=>{
+    if (e.target.tagName.toLowerCase()=="img") {
+      imgPreview.classList.remove("d-none")
+      imgPreview.querySelector('.content').style.cssText=`
+        background-image: url('${e.target.src}');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+      `
+      e.stopPropagation()
+
+    }
+    
+  })
+  imgPreview.querySelector('i').addEventListener('click',()=>{
+    imgPreview.classList.add("d-none")
+  })
+  
+  imgPreview.querySelector('.content').addEventListener('click',(e)=>{
+    e.stopPropagation()
+  })
+  document.addEventListener('click',(e)=>{
+    imgPreview.classList.add("d-none")
+  })
+  emojiPicker.addEventListener('emoji-click', (e) =>{
+    messageOtsenderInput.value+=e.detail.emoji.unicode;
+    console.log(e.detail.emoji.unicode)
+  } );
+
+  document.getElementById('emojiIcon').addEventListener('click',()=>{
+emojiPicker.classList.toggle('emoji-show')
+
+  })
+
 
 //!===========================Functions======================>
 
@@ -353,12 +394,16 @@ const handleSend = async (imgURl) => {
       ? currentUser.uid + userChatsList[indexOfSlectedUserChat][1].userInfo.uid
       : userChatsList[indexOfSlectedUserChat][1].userInfo.uid + currentUser.uid;
   // you can handle part of send image here!
-  console.log("handleSend ", combinedId);
   // you can handle part of send text here!
-  if (messageOtsenderInput.value || imgURl) {
+  let megToSend = messageOtsenderInput.value.trim();
+  
+  console.log("handleSend",megToSend.length);
+
+
+  if (megToSend || imgURl) {
     await updateDoc(doc(db, "chats", combinedId), {
       messages: arrayUnion({
-        text: messageOtsenderInput.value,
+        text: megToSend,
         senderId: currentUser.uid,
         date: Timestamp.now(),
         fileURl: String(imgURl),
@@ -371,7 +416,7 @@ const handleSend = async (imgURl) => {
     ]);
     await updateDoc(doc(db, "usersChats", currentUser.uid), {
       [combinedId + ".lastMessage"]: {
-        text: imgURl ? "Photo🧧" : messageOtsenderInput.value,
+        text: imgURl ? "Photo🧧" : megToSend+'',
       },
       [combinedId + ".isSeen"]: true,
       [combinedId + ".date"]: serverTimestamp(),
@@ -397,7 +442,7 @@ const handleSend = async (imgURl) => {
       ),
       {
         [combinedId + ".lastMessage"]: {
-          text: imgURl ? "Photo🧧" : messageOtsenderInput.value,
+          text: imgURl ? "Photo🧧" : megToSend+'',
         },
         [combinedId + ".isSeen"]: false,
         [combinedId + ".date"]: serverTimestamp(),
