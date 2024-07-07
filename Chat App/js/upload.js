@@ -4,39 +4,34 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+import { storage } from "./firebaseAppConfig.js";
 
-const uploadImage = (file, )=>{
-    
-const storage = getStorage();
-const storageRef = ref(storage, "images/rivers.jpg");
+export const uploadImage = async (file) => {
+  const data = new Date();
+  // const storage = getStorage();
+  const storageRef = ref(storage, `images/ ${data}${file.name}`);
 
-const uploadTask = uploadBytesResumable(storageRef, file);
-
-uploadTask.on(
-  "state_changed",
-  (snapshot) => {
-   
-    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    console.log("Upload is " + progress + "% done");
-    switch (snapshot.state) {
-      case "paused":
-        console.log("Upload is paused");
-        break;
-      case "running":
-        console.log("Upload is running");
-        break;
-    }
-  },
-  (error) => {
-    // Handle unsuccessful uploads
-  },
-  () => {
-    // Handle successful uploads on complete
-    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-      console.log("File available at", downloadURL);
-    });
-  }
-);
-
-}
+  const uploadTask = uploadBytesResumable(storageRef, file);
+  return new Promise((resolve, reject) => {
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+      },
+      (error) => {
+        // Handle unsuccessful uploads
+        reject("unsuccessful uploads", error.code);
+      },
+      () => {
+        // Handle successful uploads on complete
+        // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          console.log("File available at", downloadURL);
+          resolve(downloadURL);
+        });
+      }
+    );
+  });
+};

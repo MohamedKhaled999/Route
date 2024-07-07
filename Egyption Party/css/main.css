@@ -1,0 +1,37 @@
+body {
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+header {
+    background-image: linear-gradient(to left, rgba(214, 46, 51, 0.6) 0%, rgba(214, 46, 51, 0.6) 100%), url(../images/header.png);
+    background-position: center;
+    background-size: cover;
+    min-height: 660px;
+}
+
+h2 {
+    font-size: 60px;
+}
+
+aside a:hover {
+    color: rgba(214, 46, 51, 0.4) !important;
+}
+
+aside {
+
+    width: 0;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 99999;
+    overflow: hidden;
+}
+
+
+
+
+main {
+    height: 2000px;
+}

@@ -186,3 +186,26 @@ function name(params) {
 
 console.log(name())
 console.log( Number('a')); // false
+
+
+
+// var x = z??"hi"
+// console.log(x)
+
+
+// let x = null ?? (66>5)?6:5; 
+
+let num = 1;
+switch(true){
+    
+  case num % 2 == 0:
+      console.log("even");
+      break;
+  case num % 2 != 0:
+      console.log("odd11");
+      break;
+      case true:case true:
+      console.log("odd222");
+      break;
+
+}

@@ -106,12 +106,12 @@
                   <span><i class="fa-solid fa-arrow-right"></i></span>
                 </button>
 
-                <p class="text-center pt-2 fw-bold small">
+                <!-- <p class="text-center pt-2 fw-bold small">
                   Not a member yet?
                   <a class="text-decoration-none" href="register.html"
                     >Create Account >
                   </a>
-                </p>
+                </p> -->
               </form>
             </div>
 
@@ -197,9 +197,9 @@
                 </div>
                 <div class="position-relative">
                   
-                    <label for="img" class=" form-control overflow-hidden  d-flex p-0">
-                      <span class="py-2 bg-black bg-opacity-25 w-25 rounded-1">Upload image</span>
-                      <span class="flex-grow-1 bg-transparent"></span>
+                    <label for="imgFile" class=" form-control overflow-hidden  d-flex p-0 text-center " >
+                      <span class="py-2 bg-black bg-opacity-25 w-28 rounded-1 px-3" style="white-space: nowrap;">Upload image</span>
+                      <span id="imgExtention" class="flex-grow-1 text-dark fw-bold  bg-transparent align-self-center opacity-75 " style="white-space: nowrap;"  ></span>
                     </label>
                     
             
@@ -207,15 +207,16 @@
                     class="fw-bolder form-control visually-hidden"
                     type="file"
                     name="img"
-                    id="img"
-                    
+                    id="imgFile"
+                    accept="image/*"
                     placeholder="Upload image"
+                    
                   />
                  
                   <div class="invalid-tooltip">
                     <ul>
-                      <li>Age Is Required</li>
-                      <li>Minimum 10 Maxmum 80</li>
+                      <li>Image Is Required</li>
+                      <li>Must be a image</li>
                     </ul>
                   </div>
                 </div>
@@ -228,14 +229,14 @@
                   <span><i class="fa-solid fa-arrow-right"></i></span>
                 </button>
 
-                <p class="text-center pt-2 fw-bold small">
+                <!-- <p class="text-center pt-2 fw-bold small">
                   Already a member?
                   <a
                     class=" text-decoration-none"
                     href="./index.html"
                     >Sign In >
                   </a>
-                </p>
+                </p> -->
               </form>
             </div>
           </div>

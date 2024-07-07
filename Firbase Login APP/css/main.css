@@ -1,50 +1,61 @@
-body{
-
-    background-color: #24353F;
-}
-*{
+* {
     scroll-behavior: smooth;
 }
 
-.w-70{
+
+
+body {
+
+    background-color: #24353F;
+}
+
+.w-70 {
     width: 70%;
 }
-.h-85{
+
+.h-85 {
     height: 85%;
 }
 
-.chat-content,.users-chats{
+.chat-content,
+.users-chats {
     max-height: 90%;
 }
-.min-h-30{
+
+.min-h-30 {
     min-height: 30%;
 }
 
 
-.my-shadow{
-    box-shadow:-5px 2px 54px -9px rgba(0, 0, 0, 1)
+.my-shadow {
+    box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1)
 }
-h1{
-    color: #17a2b8
-    ;
+
+h1 {
+    color: #17a2b8;
 }
-.myNav{
-   height: 10%; 
-   padding: 16px;
+
+.myNav {
+    height: 10%;
+    padding: 16px;
 }
-input#findFriend{
-    box-shadow: 0 0 5px  0.1px gray inset !important;
+
+input#findFriend {
+    box-shadow: 0 0 5px 0.1px gray inset !important;
 }
-input:not(#messageOtsender){
+
+input:not(#messageOtsender) {
     color: white !important;
 }
-img{
+
+img {
     height: 38px;
     width: 38px;
 }
 
-li:hover,.search-item:hover {
-   background-color: rgba(0, 0, 0, 0.422) ;
+li:hover,
+.search-item:hover {
+    background-color: rgba(0, 0, 0, 0.422);
 }
 
 
@@ -62,6 +73,7 @@ li:hover,.search-item:hover {
 
 *::-webkit-scrollbar-thumb {
     border-radius: 6px;
-    background-color:   rgb(78, 72, 72) !important;
+    background-color: rgb(78, 72, 72) !important;
 }
+
 /*       ScrollBar 2        */

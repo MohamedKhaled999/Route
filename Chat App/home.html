@@ -1,219 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>home</title>
+    <!-- <link rel="icon" href="images/bookmark.png" /> -->
 
-  <!-- <link rel="icon" href="images/bookmark.png" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Margarine&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="css/all.min.css" />
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/main.css" />
-</head>
+    <!--  -->
 
-<body>
-  <main class="vh-100 d-flex justify-content-center align-items-center ">
-    <div class="container border border-2 rounded-2 h-85">
-      <div class="row h-100">
-        <aside class="col-4 border-end p-0 h-100  ">
-          <div class="myNav d-flex justify-content-between align-items-center bg-light">
-            <h1 class="h5 text-success">My Chat</h1>
-            <div id="navContentAside" class="nav-content d-flex align-items-center gap-2">
-              <img class="bg-danger rounded-circle"  
-              style="height: 38px; width: 38px" />
-              <span>Mohamed Khaled</span>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-              <button id="btnLogOut" class="btn btn-warning"> Logout</button>
-            </div>
-          </div>
-          <div class="users-chats overflow-auto ">
-            <div id="searchContainer" class="position-relative">
-              <input type="text" name="findFriend" id="findFriend"
-              class=" form-control p-2 py-3 bg-transparent   border-0 shadow-none" placeholder="Find a user">
-              <div id="searchUsers" class=" rounded-bottom rounded-end bg-light bg-opacity-75  position-absolute p-1 mt-1 w-100  top-100  shadow-lg d-none  overflow-auto">
+  <body>
+    <main
+      class="vh-100 d-flex justify-content-center align-items-center main-chat"
+    >
+      <div class="container">
+        <div class="row h-100">
+          <aside class="col-4 border-end p-0 h-100 pt-2">
+            <div class="myNav d-flex px-2 border-0">
+              <div
+                class="text-white nav-content d-flex align-items-center gap-1 w-100 position-relative"
+              >
+                <div
+                  id="navContentAside"
+                  class="me-auto position-relative w-75 overflow-hidden"
+                  style="white-space: nowrap"
+                >
+                  <img
+                    class="bg-black bg-opacity-50 rounded-circle"
+                    src="images/paper-plane_753603.png"
+                    style="height: 38px; width: 38px"
+                  />
+                  <span class="">Mohamed Khaled</span>
+                </div>
 
+                <div
+                  class="d-flex position-absolute top-0 bottom-0 end-0 gap-3"
+                >
+                  <button
+                    id="btnEdit"
+                    class="btn border-0 text-white text-opacity-75 p-0"
+                  >
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+                  <button
+                    id="logOutBtn"
+                    class="btn border-0 d-block text-white p-0"
+                  >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                  </button>
+                </div>
               </div>
             </div>
-            <ul class="list-unstyled  overflow-auto  mt-1 scrollbar1 ">
+
+            <div class="users-chats overflow-auto">
+              <div id="searchContainer" class="position-relative px-1 py-3">
+                <div class="d-flex text-white gap-2 text-opacity-50">
+                  <div class="search d-flex flex-grow-1 rounded">
+                    <span class="p-2">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input
+                      type="search"
+                      name="findFriend"
+                      id="findFriend"
+                      class="text-white bg-transparent form-control py-1 border-0 shadow-none"
+                      placeholder="Find a user"
+                    />
+                  </div>
+
+                  <button
+                    id="addFriendBtn"
+                    class="btn bg-black bg-opacity-50 px-3 text-white text-center"
+                  >
+                    +
+                  </button>
+                </div>
+                <ul
+                  id=""
+                  class="rounded bg-light bg-opacity-75 list-unstyled position-absolute start-0 px-1 end-0 mt-2 mx-1 shadow-lg d-none"
+                >
+                  <li class="border-bottom border-1 border-secondary">
+                    <div
+                      class="item-chat-content d-flex align-items-center gap-3"
+                    >
+                      <img
+                        class="bg-black bg-opacity-50 rounded-circle"
+                        src="images/paper-plane_753603.png"
+                        alt="avater"
+                        style="height: 38px; width: 38px"
+                      />
+                      <div>
+                        <span class="user-chat-name fw-bold"
+                          >Mohamed Khaled</span
+                        >
+                        <p class="last-message p-0 m-0 text-muted">
+                          hello there
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <ul class="friends-list list-unstyled mt-1 py-2 scrollbar1">
+                
+              </ul>
+            </div>
+          </aside>
+          <div
+            class="chat col-8 p-0 pt-2 h-100 d-flex flex-column justify-content-between position-relative "
+          >
+          <div class="layer  position-absolute top-0 h-100 w-100 bg-transparent d-flex justify-content-center align-items-center">
+            <p>
+              No Chats
+            </p>
+          </div>
+          <div class="d-none under h-100 d-flex flex-column justify-content-between ">
             
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
+            <div
+              class="myNav d-flex px-3 py-3 d-flex justify-content-between align-items-center"
+            >
+              <div class="d-flex gap-3 align-content-center">
+                <img
+                  class="bg-black bg-opacity-50 rounded-circle mb-2"
+                  src="images/paper-plane_753603.png"
+                />
+                <div class="align-self-end">
+                  <span class="h5 text-white p-0 m-0 d-block"
+                    >Mohamed Khaled
+                  </span>
+                  <p class="p-0 m-0">Lorem ipsum dolor sit</p>
                 </div>
-              </li>
-
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border-bottom border-1 border-secondary ps-2">
-                <div class="item-chat-content  d-flex align-items-center gap-3">
-                  <img class="bg-danger rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                  <div>
-                    <span class="user-chat-name fw-bold">Mohamed Khaled</span>
-                    <p class="last-message p-0 m-0 text-muted"> hello there</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </aside>
-        <div class="chat col-8 p-0 bg-success h-100 d-flex flex-column justify-content-between">
-
-          <div class="myNav d-flex justify-content-between bg-warning align-items-center ">
-            <span class="h5 text-success">My Chat</span>
-          </div>
-          <div class="chat-content h-90 d-flex flex-column">
-
-            <div class="d-flex flex-column overflow-auto scrollbar1" id="messageContainer">
-             
-           
-              
-              <div class="receiver align-self-end d-flex align-items-center ">
-
-                <p class="  rounded-start rounded-bottom bg-info p-2 m-2"> i am fine
-                </p>
-                <img class="bg-white rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
               </div>
+              <div class="icons text-white d-flex gap-3">
+                <span>
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <span>
+                  <i class="fa-solid fa-video"></i>
+                </span>
 
-              <div class="sender align-self-start d-flex align-items-center">
-                <img class="bg-white rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-                <p class="  rounded-end rounded-bottom bg-danger p-2 m-2"> hello mohamed
-                </p>
+                <span>
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                </span>
               </div>
-
-              <div class="receiver align-self-end d-flex align-items-center ">
-
-                <p class="  rounded-start rounded-bottom bg-info p-2 m-2"> i am fine
-                </p>
-                <img class="bg-white rounded-circle" src="" alt="" style="height: 38px; width: 38px" />
-              </div>
-             
             </div>
-
-            <div class="d-flex gap-1 p-1 ">
-
-              <input type="text" name="message" id="messageOtsender" class="p-2 w-100 rounded text-dark border-1 border-white shadow   ">
-              <button id="sendBtn" class="btn btn-outline-warning">send</button>
+            <div
+              class="chat-content d-flex flex-column justify-content-end flex"
+            >
+              <div class="px-2 d-flex flex-column" id="messageContainer">
+                <div class="receiver align-self-end d-flex align-items-center">
+                  <p class="rounded-start rounded-bottom bg-info p-2 m-2">
+                    molestiae aliquam exercitationem! Minima, necessitatibus
+                    necessitatibus quibusdam, mollitia dolor aliquid! Molestias
+                    voluptatum mollitia dolore commodi culpa, quae quisquam.
+                  </p>
+                  <img
+                    class="bg-black bg-opacity-50 rounded-circle align-self-end"
+                    src="images/paper-plane_753603.png"
+                    alt=""
+                    style="height: 38px; width: 38px"
+                  />
+                </div>
+                <div class="sender align-self-start d-flex align-items-center">
+                  <img
+                    class="bg-black bg-opacity-50 rounded-circle align-self-end"
+                    src="images/paper-plane_753603.png"
+                    alt=""
+                    style="height: 38px; width: 38px"
+                  />
+                  <p
+                    class="rounded-end rounded-bottom bg-white bg-opacity-25 p-2 m-2"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Commodi necessitatibus vel exercitationem excepturi quo
+                    incidunt maiores, soluta nostrum corporis iste? Eveniet
+                    porro a, veniam nihil accusantium voluptatem? Sint, beatae
+                    quisquam.
+                  </p>
+                </div>
+                <div class="receiver align-self-end d-flex align-items-center">
+                  <p class="rounded-start rounded-bottom bg-info p-2 m-2">
+                    i am fine
+                  </p>
+                  <img
+                    class="bg-black bg-opacity-50 rounded-circle align-self-end"
+                    src="images/paper-plane_753603.png"
+                    alt=""
+                    style="height: 38px; width: 38px"
+                  />
+                </div>
+              </div>
             </div>
+            <footer class="d-flex gap-3 p-1 px-3 py-3 mt-1 text-white">
+              <div class="d-flex gap-3 align-items-center flex-grow-1">
+                <label for="imgChat" class="shadow-none">
+                  <i class="fa-regular fa-image"></i>
+                  <input id="imgChat" type="file" accept="image/*" class="d-none">
+                </label>
+                <span>
+                  <i class="fa-solid fa-camera-retro"></i>
+                </span>
+                <span>
+                  <i class="fa-solid fa-microphone"></i>
+                </span>
+
+                <input
+                  type="text"
+                  name="message"
+                  id="messageOtsender"
+                  class="p-2 w-100 rounded text-white border-0 border-white flex-grow-1 send"
+                  placeholder="Type a message ..."
+                />
+
+                <span> <i class="fa-solid fa-face-smile"></i> </span>
+              </div>
+              <button id="sendBtn" class="btn d-flex align-items-center">
+                <img class="d-block" src="images/send icon.png"alt="send btn">
+              </button>
+            </footer>
+
+          </div>
 
           </div>
         </div>
+        <div id="myModal" class="modal" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-2 bg-black m-auto">
+              <div class="modal-header border-0 p-0 pb-1">
+                <div class="circles d-flex gap-1">
+                  <span class="rounded-circle"></span>
+                  <span class="rounded-circle"></span>
+                  <span class="rounded-circle"></span>
+                </div>
+                <button
+                  type="button"
+                  class="btn-close text-bg-primary"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body p-0 pt-3">
+                <div class="d-flex gap-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Username"
+                    id="newFriend"
+                  />
+                  <button class="btn btn-primary">Search</button>
+                </div>
+                <ul
+                  class="list-unstyled d-flex flex-column gap-2 my-3 overflow-auto"
+                ></ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  </main>
+    </main>
 
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="js/home.js"></script>
-</body>
-
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/home.js"></script>
+  </body>
 </html>
