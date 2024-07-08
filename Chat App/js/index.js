@@ -1,4 +1,4 @@
-import { handleLogin,handleSignUp } from "./auth.js";
+import { handleLogin, handleSignUp } from "./auth.js";
 //?===========================Golabl==========================>
 const signInBtn = document.getElementById("signInBtn");
 const signUpBtn = document.getElementById("signUpBtn");
@@ -10,6 +10,8 @@ const singUpInputs = document.querySelectorAll(".signup-form input");
 const signInForm = document.querySelector(".signin-form form");
 const signUpForm = document.querySelector(".signup-form form");
 const inputFile = document.getElementById("");
+var myToast = new bootstrap.Toast(document.getElementById("myToast"));
+
 //!===========================when Start======================>
 
 //*===========================Events==========================>
@@ -48,9 +50,15 @@ signUpForm.addEventListener("change", (e) => {
   if (e.target.tagName.toLowerCase() == "input") {
     isValid(e.target);
     if (e.target.type.toLowerCase() == "file") {
-      // console.log(e.target.files[0].name);
-      document.getElementById("imgExtention").innerHTML =
-        e.target.files[0].name;
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        document.querySelector('label img').src=e.target.result;
+    }
+      reader.readAsDataURL(e.target.files[0]);
+      // console.log(e.target.files[0]);
+      // document.querySelector('label img').src=e.target.files[0];
+
+        
     }
   }
 });
@@ -80,18 +88,43 @@ async function setForm(id) {
   }
   if (isValidInputs && id == "in") {
     try {
-      let x= await handleLogin(user);
-      window.location="./home.html"
+      showMyToast("Please wait !", "bg-info");
+      let x = await handleLogin(user);
+      if (x) {
+        showMyToast("Success", "bg-success");
+        window.location="./home.html"
+        signInForm.reset();
+      }
     } catch (error) {
       console.log("me,", error);
+      showMyToast(error.message, "bg-danger");
+      // showMyToast("the email already exists","bg-danger");
     }
-
-    
   }
   if (isValidInputs && id == "up") {
-    let x = await handleSignUp(user);
+    try {
+
+      let x = await handleSignUp(user);
+      showMyToast("Success", "bg-success");
+      signInBtn.click();
+      signInForm.reset();
+    } catch (error) {
+      showMyToast(error.message, "bg-danger");
+    }
     // console.log(x);
   }
+}
+
+function showMyToast(meg, colorClass) {
+  var toast = document.getElementById("myToast");
+  document.querySelector(".toast-body").innerHTML = meg;
+  toast.classList.remove("bg-danger", "bg-success");
+
+  toast.classList.add(colorClass);
+  myToast.show();
+  setTimeout(function () {
+    myToast.hide();
+  }, 2000);
 }
 
 //*===========================Validation======================>

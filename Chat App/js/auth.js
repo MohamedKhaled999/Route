@@ -29,8 +29,9 @@ export const handleLogin = async (user) => {
       console.log("currentUser", auth.currentUser);
       return auth.currentUser;
     }
+    
+    // loginForm.reset();
     // window.location = "./home.html";
-    loginForm.reset();
   } catch (error) {
     console.log(error);
   }

@@ -25,7 +25,7 @@ let indexOfSlectedUserChat;
 let userChatsList = [];
 let searchedToAddFriend = [];
 const myModal = new bootstrap.Modal(document.getElementById("myModal"));
-const imgPreview =document.getElementById("imagePreviewer");
+const imgPreview = document.getElementById("imagePreviewer");
 const navContentAside = document.getElementById("navContentAside");
 const logoutBtn = document.getElementById("logOutBtn");
 const myUserChats = document.querySelector("ul.friends-list");
@@ -33,18 +33,30 @@ const addFriendBtn = document.getElementById("addFriendBtn");
 const sendBtn = document.getElementById("sendBtn");
 const messageOtsenderInput = document.getElementById("messageOtsender");
 const messageContainer = document.getElementById("messageContainer");
-const emojiPicker =  document.querySelector('emoji-picker');
+const emojiPicker = document.querySelector("emoji-picker");
+const loading = document.getElementById("loading");
+var myToast =new bootstrap.Toast(document.getElementById("myToast")) ;
+
 
 //!===========================when Start======================>
-await onAuthStateChanged(auth, (user) => {
+await onAuthStateChanged(auth, async (user) => {
+  loading.classList.remove("d-none");
+
   if (user) {
     navContentAside.children[0].setAttribute("src", "" + user.photoURL);
     navContentAside.children[1].innerHTML = user.displayName;
     currentUser = user;
-    handleUsersChats();
+    await handleUsersChats();
+   setInterval(()=>{
+    loading.classList.add("d-none");
+   },1000)
+
   } else {
-    // console.log("no user");
-    document.body.classList.add("d-none");
+     console.log("no user");
+
+    // document.body.classList.add("d-none");
+    loading.classList.add("d-none");
+
     window.location = "./index.html";
   }
 });
@@ -76,7 +88,6 @@ document.addEventListener("keydown", (e) => {
         if (e.target.value) {
           handleSend();
         }
-        
 
         break;
       case "newFriend":
@@ -107,18 +118,15 @@ document
   });
 
 myUserChats.addEventListener("click", async function (e) {
-    // document.getElementById("findFriend").value="";
-    // filterFriends("")
-    let ele = e.target.closest("li");
-    if (ele.getAttribute('index') != null) {
-        // console.log(ele.getAttribute('index'))
-        indexOfSlectedUserChat=Number(ele.getAttribute('index'))
-    } else {
-        indexOfSlectedUserChat = Array.from(myUserChats.children).indexOf(ele);
-
-    }
-
-  
+  // document.getElementById("findFriend").value="";
+  // filterFriends("")
+  let ele = e.target.closest("li");
+  if (ele.getAttribute("index") != null) {
+    // console.log(ele.getAttribute('index'))
+    indexOfSlectedUserChat = Number(ele.getAttribute("index"));
+  } else {
+    indexOfSlectedUserChat = Array.from(myUserChats.children).indexOf(ele);
+  }
 
   console.log(indexOfSlectedUserChat);
   console.log(userChatsList[indexOfSlectedUserChat]);
@@ -127,8 +135,26 @@ myUserChats.addEventListener("click", async function (e) {
 
   document.querySelector(".chat .layer").classList.add("d-none");
   document.querySelector(".chat .under").classList.remove("d-none");
-  document.getElementById("findFriend").value="";
+  document.getElementById("findFriend").value = "";
+  if (window.innerWidth <= 768) {
+    document.querySelector("aside").classList.add("d-none");
+    document.querySelector(".chat").style.opacity = 1;
+  }
 });
+document.getElementById("back").addEventListener("click", () => {
+  document.querySelector("aside").classList.remove("d-none");
+  document.querySelector(".chat").style.opacity = 0;
+});
+window.addEventListener(
+  "resize",
+  function (event) {
+    if (window.innerWidth > 768) {
+      document.querySelector("aside").classList.remove("d-none");
+      document.querySelector(".chat").style.opacity = 1;
+    }
+  },
+  true
+);
 
 sendBtn.addEventListener("click", () => {
   handleSend();
@@ -144,45 +170,41 @@ document
     }
   });
 
-  messageContainer.addEventListener('click',(e)=>{
-    if (e.target.tagName.toLowerCase()=="img") {
-      imgPreview.classList.remove("d-none")
-      imgPreview.querySelector('.content').style.cssText=`
+messageContainer.addEventListener("click", (e) => {
+  if (e.target.tagName.toLowerCase() == "img") {
+    imgPreview.classList.remove("d-none");
+    imgPreview.querySelector(".content").style.cssText = `
         background-image: url('${e.target.src}');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 }
-      `
-      e.stopPropagation()
+      `;
+    e.stopPropagation();
+  }
+});
+imgPreview.querySelector("i").addEventListener("click", () => {
+  imgPreview.classList.add("d-none");
+});
 
-    }
-    
-  })
-  imgPreview.querySelector('i').addEventListener('click',()=>{
-    imgPreview.classList.add("d-none")
-  })
-  
-  imgPreview.querySelector('.content').addEventListener('click',(e)=>{
-    e.stopPropagation()
-  })
-  document.addEventListener('click',(e)=>{
-    imgPreview.classList.add("d-none")
-  })
-  emojiPicker.addEventListener('emoji-click', (e) =>{
-    messageOtsenderInput.value+=e.detail.emoji.unicode;
-    console.log(e.detail.emoji.unicode)
-  } );
+imgPreview.querySelector(".content").addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+document.addEventListener("click", (e) => {
+  imgPreview.classList.add("d-none");
+});
+emojiPicker.addEventListener("emoji-click", (e) => {
+  messageOtsenderInput.value += e.detail.emoji.unicode;
+  console.log(e.detail.emoji.unicode);
+});
 
-  document.getElementById('emojiIcon').addEventListener('click',()=>{
-emojiPicker.classList.toggle('emoji-show')
-
-  })
-
+document.getElementById("emojiIcon").addEventListener("click", () => {
+  emojiPicker.classList.toggle("emoji-show");
+});
 
 //!===========================Functions======================>
 
-const handleUsersChats = () => {
+const handleUsersChats = async () => {
   const unsub = onSnapshot(doc(db, "usersChats", currentUser.uid), (doc) => {
     let temp = "";
     userChatsList = [];
@@ -396,9 +418,8 @@ const handleSend = async (imgURl) => {
   // you can handle part of send image here!
   // you can handle part of send text here!
   let megToSend = messageOtsenderInput.value.trim();
-  
-  console.log("handleSend",megToSend.length);
 
+  console.log("handleSend", megToSend.length);
 
   if (megToSend || imgURl) {
     await updateDoc(doc(db, "chats", combinedId), {
@@ -416,7 +437,7 @@ const handleSend = async (imgURl) => {
     ]);
     await updateDoc(doc(db, "usersChats", currentUser.uid), {
       [combinedId + ".lastMessage"]: {
-        text: imgURl ? "Photo🧧" : megToSend+'',
+        text: imgURl ? "Photo🧧" : megToSend + "",
       },
       [combinedId + ".isSeen"]: true,
       [combinedId + ".date"]: serverTimestamp(),
@@ -442,7 +463,7 @@ const handleSend = async (imgURl) => {
       ),
       {
         [combinedId + ".lastMessage"]: {
-          text: imgURl ? "Photo🧧" : megToSend+'',
+          text: imgURl ? "Photo🧧" : megToSend + "",
         },
         [combinedId + ".isSeen"]: false,
         [combinedId + ".date"]: serverTimestamp(),
@@ -464,10 +485,10 @@ const handleSend = async (imgURl) => {
 };
 const filterFriends = (x) => {
   console.log("x", x);
-  let filterList = userChatsList.filter((chat,index) => {
+  let filterList = userChatsList.filter((chat, index) => {
     if (chat[1].userInfo.displayName.toLowerCase().includes(x.toLowerCase())) {
-        chat[1].index=index;
-     return true;   
+      chat[1].index = index;
+      return true;
     }
     return false;
   });
@@ -476,10 +497,11 @@ const filterFriends = (x) => {
   let temp = "";
   filterList.forEach((chat) => {
     console.log(chat[1]);
-    
 
     temp += `
-              <li class="border-bottom border-1 border-secondary ps-2 " index="${chat[1].index}">
+              <li class="border-bottom border-1 border-secondary ps-2 " index="${
+                chat[1].index
+              }">
                 <div class="item-chat-content  d-flex align-items-center gap-3  position-relative">
                       <img class="bg-black bg-opacity-50 rounded-circle" src="${
                         chat[1].userInfo.photoURL
@@ -502,7 +524,18 @@ const filterFriends = (x) => {
                   </li>`;
   });
   myUserChats.innerHTML = temp;
- 
 };
+function showMyToast(meg,colorClass){
+
+  var toast =document.getElementById("myToast");
+  document.querySelector(".toast-body").innerHTML = meg;
+  toast.classList.remove("bg-danger","bg-success");
+
+    toast.classList.add(colorClass);
+    myToast.show();
+    setTimeout(function () {
+      myToast.hide();
+    }, 2000);
+}
 
 //*===========================Validation======================>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body class="overflow-hidden">
-    <main class="w-100 text-white">
+    <main class="w-100 text-white position-relative">
       <div class="container text-center sing-in-up outer-bg  ">
         <img
           src="images/paper-plane_753603 (1).png "
@@ -198,8 +198,11 @@
                 <div class="position-relative">
                   
                     <label for="imgFile" class=" form-control overflow-hidden  d-flex p-0 text-center " >
-                      <span class="py-2 bg-black bg-opacity-25 w-28 rounded-1 px-3" style="white-space: nowrap;">Upload image</span>
-                      <span id="imgExtention" class="flex-grow-1 text-dark fw-bold  bg-transparent align-self-center opacity-75 " style="white-space: nowrap;"  ></span>
+                      <span class="py-2 bg-black bg-opacity-25 w-50 rounded-1 px-3" style="white-space: nowrap;">Upload image</span>
+                      <span id="imgExtention" class="flex-grow-1 d-flex align-items-center justify-content-center text-dark fw-bold  bg-transparent align-self-center opacity-75 " style="white-space: nowrap;"  >
+                        <img class="bg-black bg-opacity-50 rounded-circle  d-block text-center  mx-2 " src="images/paper-plane_753603.png" alt="">
+                        
+                      </span>
                     </label>
                     
             
@@ -240,6 +243,14 @@
               </form>
             </div>
           </div>
+        </div>
+      </div>
+      <div id="myToast" class="toast align-items-center position-absolute  end-0 bottom-0 m-1 bg-danger bg-opacity-75 text-white"  autohide="false" animation="true" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            incorrect email or password
+          </div>
+          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
       </div>
     </main>
