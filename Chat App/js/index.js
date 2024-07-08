@@ -11,6 +11,8 @@ const signInForm = document.querySelector(".signin-form form");
 const signUpForm = document.querySelector(".signup-form form");
 const inputFile = document.getElementById("");
 var myToast = new bootstrap.Toast(document.getElementById("myToast"));
+const loading = document.getElementById("loading");
+
 
 //!===========================when Start======================>
 
@@ -103,11 +105,14 @@ async function setForm(id) {
   }
   if (isValidInputs && id == "up") {
     try {
-
+      showMyToast("Please wait !", "bg-info");
+      loading.classList.remove("d-none");
       let x = await handleSignUp(user);
+      loading.classList.add("d-none");
+      signUpForm.reset();
       showMyToast("Success", "bg-success");
       signInBtn.click();
-      signInForm.reset();
+     
     } catch (error) {
       showMyToast(error.message, "bg-danger");
     }
@@ -149,6 +154,9 @@ function isValid(ele) {
       regex = /^\d{6,}$/;
       break;
     case "imgFile":
+      if(!ele.value){
+        return true;
+      }
       regex = /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i;
       break;
   }

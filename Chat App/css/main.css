@@ -317,12 +317,19 @@ form button.btn:hover {
 }
 
 /*?============Home==============*/
-.main-chat #loading{
+.main-chat #loading {
     z-index: 13;
-    background-image:linear-gradient(to left ,rgba(0, 0, 0, 0.829) 0%,#21264d82 100%),url("../images/1.jpg") ;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.829) 0%, #21264d82 100%), url("../images/1.jpg");
     /* background-color: ; */
 }
-.main-chat .loader {
+.my-forms #loading {
+    z-index: 13;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.829) 0%, #21264d82 100%);
+    /* background-color: ; */
+}
+
+
+.loader {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -331,10 +338,10 @@ form button.btn:hover {
     border-right: 4px solid transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    
+
 }
 
-.main-chat .loader::after {
+.loader::after {
     content: '';
     box-sizing: border-box;
     position: absolute;
@@ -347,6 +354,7 @@ form button.btn:hover {
     border-bottom: 4px solid transparent;
     animation: rotation 0.5s linear infinite reverse;
 }
+
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
@@ -357,43 +365,52 @@ form button.btn:hover {
     }
 }
 
-.main-chat{
-margin: 15px;
+.main-chat {
+    margin: 15px;
 }
-.outline{
+
+.outline {
     outline-width: 25px !important;
     outline-color: #21264da0;
     outline-style: solid;
     position: relative;
-    overflow: visible !important;;
-   
+    overflow: visible !important;
+    ;
+
 }
-.identity{
+
+.identity {
     z-index: 10;
     top: -25px;
     color: rgba(255, 255, 255, 0.826);
-    text-shadow: 3px 0px rgba(0, 0, 0, 0.353)   ;
+    text-shadow: 3px 0px rgba(0, 0, 0, 0.353);
 }
+
 .myNav {
     min-height: 30px !important;
     border-bottom: rgba(252, 252, 252, 0.4) solid 2px;
 }
+
 .chat .myNav {
     min-height: 15% !important;
 }
-.chat  {
+
+.chat {
     transition: all 1s 0.5s;
 }
-aside  {
+
+aside {
     transition: all 1s 0.7s;
 }
-#imagePreviewer{
+
+#imagePreviewer {
     z-index: 5;
 }
 
 .chat-content {
     min-height: 73%
 }
+
 .main-chat footer {
     min-height: 12%;
     border-top: rgba(252, 252, 252, 0.4) solid 2px;
@@ -425,7 +442,8 @@ aside  {
     opacity: 0.5;
 }
 
-.main-chat img,label img {
+.main-chat img,
+label img {
     height: 38px;
     width: 38px;
 }
@@ -485,23 +503,25 @@ aside  {
 .main-chat .seen {
     width: 15px;
     height: 15px;
-   
+
 }
-.main-chat #sendBtn img{
+
+.main-chat #sendBtn img {
     width: 20px;
     height: 20px;
     transition: all 0.3s;
 }
-.main-chat #sendBtn img:hover{
+
+.main-chat #sendBtn img:hover {
     transform: rotate(-90deg);
 }
 
-#imageModal{
+#imageModal {
     position: absolute !important;
-    
+
 }
 
-emoji-picker{
+emoji-picker {
     --emoji-font-family: MyCustomFont;
     right: 10px;
     top: 0;
@@ -510,20 +530,21 @@ emoji-picker{
     height: 250px;
     transition: all 0.7s;
     /* display: none; */
-  }
-  .emoji-show{
+}
+
+.emoji-show {
     transform: translateY(-102%);
-   
+
     opacity: 1;
-    
-  }
+
+}
 
 /* !==========Media========= */
 @media (max-width:768px) and (min-width:0px) {
     .container {
         width: 95%;
     }
-    
+
 
     .motions-container {
         width: 0px !important;
@@ -539,35 +560,36 @@ emoji-picker{
     .my-forms {
         width: 100%;
     }
-    .chat{
+
+    .chat {
         opacity: 0;
     }
-    
+
 }
+
 @media (max-width:768px) and (min-width:600px) {
-    .main-chat .container{
+    .main-chat .container {
         width: 1000px !important;
     }
-    
-    
-    .main-chat aside{
+
+
+    .main-chat aside {
         width: 100%;
     }
 
-    
+
 
 }
+
 @media (max-width:600px) and (min-width:500px) {
-    .main-chat .container{
-        width:450px !important;
+    .main-chat .container {
+        width: 450px !important;
     }
-   
-        
-    
-    .main-chat aside{
+
+
+
+    .main-chat aside {
         width: 100%;
     }
 
 }
-
-

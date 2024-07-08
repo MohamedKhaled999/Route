@@ -43,6 +43,9 @@
             </div>
           </div>
           <div class="col-md-6 position-relative overflow-hidden my-forms ">
+            <div id="loading" class=" d-flex position-fixed start-0 top-0   w-100 h-100  d-flex justify-content-center align-items-center d-none">
+              <span class="loader"></span>
+            </div>
             <div class="my-btns d-flex gap-2 py-4 justify-content-center pb-5">
               <button id="signInBtn" class="rounded-pill px-4 btn selected">
                 Sign in
@@ -90,8 +93,7 @@
                     <ul>
                       <li>Password Is Required</li>
                       <li>
-                        Minimum eight characters, at least one letter and one
-                        number
+                        Minimum 6 number
                       </li>
                     </ul>
                   </div>
@@ -116,6 +118,7 @@
             </div>
 
             <div class="signup-form position-absolute w-100 px-3">
+
               <div class="text-center">
                 <img
                   src="images/paper-plane_753603.png"
@@ -200,7 +203,7 @@
                     <label for="imgFile" class=" form-control overflow-hidden  d-flex p-0 text-center " >
                       <span class="py-2 bg-black bg-opacity-25 w-50 rounded-1 px-3" style="white-space: nowrap;">Upload image</span>
                       <span id="imgExtention" class="flex-grow-1 d-flex align-items-center justify-content-center text-dark fw-bold  bg-transparent align-self-center opacity-75 " style="white-space: nowrap;"  >
-                        <img class="bg-black bg-opacity-50 rounded-circle  d-block text-center  mx-2 " src="images/paper-plane_753603.png" alt="">
+                        <img  class="bg-black bg-opacity-50 rounded-circle  d-block text-center  mx-2 " src="images/paper-plane_753603.png" alt="">
                         
                       </span>
                     </label>
@@ -211,6 +214,7 @@
                     type="file"
                     name="img"
                     id="imgFile"
+                    
                     accept="image/*"
                     placeholder="Upload image"
                     
@@ -218,7 +222,6 @@
                  
                   <div class="invalid-tooltip">
                     <ul>
-                      <li>Image Is Required</li>
                       <li>Must be a image</li>
                     </ul>
                   </div>
@@ -241,6 +244,8 @@
                   </a>
                 </p> -->
               </form>
+              
+
             </div>
           </div>
         </div>
