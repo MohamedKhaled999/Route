@@ -12,15 +12,16 @@ $(".openNav").on("click", function () {
   }
 });
 
-$("#leftMenu a[href]").on("click",(e)=>{
-    
-  var sectionId= $(e.target).attr("href");
-  
-  var positionOfSection = $(sectionId).offset().top;
-  
-  $("html , body").animate({scrollTop:positionOfSection},2000);
-  
-})
+$("#leftMenu a[href]").on("click", (e) => {
+  let id = $(e.target).attr("href");
+  console.log(id);
+
+  let sectionOffset = $(id).offset().top;
+  console.log(sectionOffset);
+
+  $("html , body").animate({ scrollTop: sectionOffset }, 2000);
+});
+
 $("#closeBtn").on("click", function () {
   aside.animate({ width: "0" }, 500);
   Hcontent.animate({ left: "0" }, 500);
@@ -35,14 +36,12 @@ $(window).on("load", () => {
   setDate(new Date(2024, 6, 27, 20, 42, 30, 0));
 });
 
-$('textarea').on('input',(e)=>{
-  if($(e.target).val().length<100)
-  $('#lengthOfLetters').html(100-$(e.target).val().length)
-  else
-  $('#lengthOfLetters').html("your available character finished")
-})
+$("textarea").on("input", (e) => {
+  if ($(e.target).val().length < 100)
+    $("#lengthOfLetters").html(100 - $(e.target).val().length);
+  else $("#lengthOfLetters").html("your available character finished");
+});
 //?=================Functions=====================
-
 
 const setDate = (futureDate) => {
   let secondsDifference = Math.floor(
