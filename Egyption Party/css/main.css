@@ -10,6 +10,7 @@ header {
     background-size: cover;
     min-height: 660px;
 }
+
 header h2 {
     font-size: 60px;
 }
@@ -29,57 +30,62 @@ aside {
     overflow: hidden;
 }
 
-#slider .content{
+#slider .content {
     background-color: #E68285;
     /* margin-block: ; */
-    
-}
-#slider .content h3{
-    padding: 10px;
-    color :white;
-    
 
 }
-#slider .content p{
+
+#slider .content h3 {
+    padding: 10px;
+    color: white;
+
+
+}
+
+#slider .content p {
     color: black;
     padding: 10px;
     background-color: #ccc;
     margin: 0;
     display: none;
-    
+
 }
 
-#slider .content .slide{
+#slider .content .slide {
     display: block;
 }
 
-#counter{
+#counter {
     background-image: linear-gradient(to left, rgba(214, 46, 51, 0.6) 0%, rgba(214, 46, 51, 0.6) 100%), url(../images/invitation.jpg);
 
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: center;
-    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     margin-bottom: 34px !important;
 }
 
 
-#contact h2,#contact h3{
- font-weight: 700;
- color: rgb(69, 69, 69);
+#contact h2,
+#contact h3 {
+    font-weight: 700;
+    color: rgb(69, 69, 69);
 }
-#contact .first{
-    text-indent: 10px;
-    
-}   
 
-#contact h3{
+#contact .first {
+    text-indent: 10px;
+
+}
+
+#contact h3 {
     color: #762727;
     font-size: 18px;
     line-height: 21.6px;
-    
-   }
 
-.social-list span{
+}
+
+.social-list span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,11 +94,9 @@ aside {
     transition: all 0.5s;
     cursor: pointer;
 }
-.social-list span:hover{
-  background-color: red;
-  color: white;
+
+.social-list span:hover {
+    background-color: red;
+    color: white;
 
 }
-   
-
-
