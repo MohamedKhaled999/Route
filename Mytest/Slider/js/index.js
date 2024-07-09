@@ -195,17 +195,17 @@ console.log( Number('a')); // false
 
 // let x = null ?? (66>5)?6:5; 
 
-let num = 1;
-switch(true){
+// let num = 1;
+// switch(true){
     
-  case num % 2 == 0:
-      console.log("even");
-      break;
-  case num % 2 != 0:
-      console.log("odd11");
-      break;
-      case true:case true:
-      console.log("odd222");
-      break;
+//   case num % 2 == 0:
+//       console.log("even");
+//       break;
+//   case num % 2 != 0:
+//       console.log("odd11");
+//       break;
+//       case true:case true:
+//       console.log("odd222");
+//       break;
 
-}
+// }
