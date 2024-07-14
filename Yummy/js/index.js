@@ -124,7 +124,7 @@ const openNav = () => {
   $(".open-close-icon").addClass("fa-x");
   $("aside .content li").each((index, ele) => {
     // console.log(index, ele);
-    $(ele).animate({ top: 0, left: 0 }, (5 + index) * 100);
+    $(ele).animate({ top: 0, left: 0 }, (5.5 + index) * 100);
   });
 };
  export const closeNav = () => {
