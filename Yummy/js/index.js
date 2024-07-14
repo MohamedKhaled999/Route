@@ -37,6 +37,7 @@ $(".content a").on("click", async function (e) {
     case "#search":
       // console.log(e.target);
       $("#search-page .search-inputs").removeClass("d-none");
+      $("#search-page .search-inputs input").val("");
       $("#search-page .row").html("");
 
       break;
