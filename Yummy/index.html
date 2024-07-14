@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yummy</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="bg-black">
+
+
+
+  <!-- ==================== Start side Bar ========================  -->
+
+  <aside class="d-flex">
+    <div class="content">
+      <div class="h-100 px-4 pt-4 d-flex flex-column justify-content-between">
+        <ul id="leftMenu" class=" sidenav list-unstyled d-flex flex-column gap-3 text-start text-white overflow-hidden">
+          <li class="">
+            <a class="text-decoration-none text-white" to-show="#search">Search</a>
+          </li>
+          <li>
+            <a class="text-decoration-none text-white" to-show="#categories">Categories</a>
+          </li>
+          <li>
+            <a class="text-decoration-none text-white" to-show="#area">Area</a>
+          </li>
+          <li>
+            <a class="text-decoration-none text-white" to-show="#ingredients">Ingredients
+            </a>
+          </li>
+          <li>
+            <a class="text-decoration-none text-white" to-show="#contact-us">Contact Us
+            </a>
+          </li>
+        </ul>
+        <div class="text-white">
+          <div class="d-flex gap-1 pb-2">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <p>Copyright Â© 2019 All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bar d-flex flex-column bg-white justify-content-between align-items-center text-black">
+      <img src="images/logo.png" class="w-100" alt="" />
+
+      <span class="openNav">
+        <i class="fa-solid open-close-icon fa-2x fa-align-justify"></i>
+      </span>
+
+      <div class="d-flex flex-column">
+        <span class="">
+          <i class="fa-solid fa-globe d-block"> </i>
+        </span>
+        <span>
+          <i class="fa-solid fa-share-nodes"></i>
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <div class="loading-outer position-fixed  justify-content-center align-items-center bg-black min-vh-100">
+    <span>
+      <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </span>
+  </div>
+
+  <!-- ==================== End side Bar ========================  -->
+
+  <main>
+    <div class="container position-relative">
+      <!-- ==================== Start Search ======================== -->
+      <section id="search-page" class="">
+        <div class="d-none search-inputs d-flex flex-column flex-md-row gap-4 py-4 px m-auto">
+          <input type="text" class="form-control bg-transparent text-white" placeholder="Search By Name" />
+          <input type="text" maxlength="1" class="form-control bg-transparent text-white"
+            placeholder="Search By First Letter" />
+        </div>
+        <div class="row py-5 g-4">
+          <div class="col-md-3">
+            <div>
+              <div class="item position-relative rounded-2 overflow-hidden">
+                <img src="images/4pqimk1683207418.jpg" class="w-100" alt="food" />
+                <div class="item-layer position-absolute d-flex align-items-center">
+                  <h3 class="text-black">Kafteji</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==================== End Search ========================  -->
+
+      <!-- ==================== Start Categories ========================  -->
+      <section id="categories-page" class="">
+
+        <div class="row py-5 g-4">
+
+        </div>
+      </section>
+      <!-- ==================== End Categories ========================  -->
+
+      <!-- ==================== Start Area ========================  -->
+      <section id="area-page" class="">
+
+        <div class="row py-5 g-4">
+          <div class="col-md-3">
+            <div>
+              <div class="item position-relative rounded-2 overflow-hidden">
+                <div class="text-center">
+                  <i class="fa-solid fa-house-laptop fa-4x"></i>
+                  <h3>American</h3 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      <!-- ==================== End Area ========================  -->
+
+      <!-- ==================== Start Ingredients ========================  -->
+      <section id="ingredients-page" class="">
+
+        <div class="row py-5 g-4">
+          <div class="col-md-3">
+            <div>
+              <div class="item position-relative rounded-2 overflow-hidden">
+                <div class=" text-center">
+                  <i class="fa-solid fa-drumstick-bite fa-4x"></i>
+                  <h3>American</h3>
+                  <p>
+                    Salmon is the common name for several species of ray-finned fish in the family Salmonidae. Other
+                    fish in the same
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==================== End Ingredients ========================  -->
+
+      <!-- ==================== Start Contact Us ========================  -->
+      <section id="contact-us-page" class="min-vh-100 align-items-center justify-content-center ">
+        
+        <form method="post" class="row py-5 g-4 w-75">
+          <div class="col-md-6">
+            <div class="position-relative flex-grow-1">
+              <input class="form-control" name="name" type="text" placeholder="Enter Your Name">
+
+              <div class="invalid-tooltip">
+
+                Special characters and numbers not allowed
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="position-relative flex-grow-1">
+              <input class="form-control" name="email" type="email" placeholder="Enter Your Email">
+
+              <div class="invalid-tooltip">
+                Email not valid *exemple@yyy.zzz
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="position-relative flex-grow-1">
+              <input class="form-control" name="phone" type="tel" placeholder="Enter Your Phone">
+
+              <div class="invalid-tooltip">
+
+                Enter valid Phone Number
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="position-relative flex-grow-1">
+              <input class="form-control" name="age" type="number" placeholder="Enter Your Age">
+
+              <div class="invalid-tooltip">
+
+                Enter valid age
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="position-relative flex-grow-1">
+              <input class="form-control" name="password" type="password" placeholder="Enter Your Password">
+
+              <div class="invalid-tooltip">
+
+                Enter valid password *Minimum eight characters, at least one letter and one number:*
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="position-relative flex-grow-1">
+              <input class="form-control" name="repassword" type="password" placeholder="Enter Your Repassword">
+
+              <div class="invalid-tooltip">
+
+                Enter valid repassword
+
+              </div>
+            </div>
+          </div>
+          <button id="submitBtn" class="btn btn-outline-danger w-auto mx-auto" disabled>Submit</button>
+        </form>
+      </section>
+      <!-- ==================== End Contact Us ========================  -->
+
+      <!-- ==================== Start Meal Deatils ========================  -->
+      <section id="meal-deatils-page" class="">
+
+        <div class="row py-5 g-4">
+          <div class="col-md-4">
+            <div>
+              <div class="item position-relative rounded-2 overflow-hidden">
+                <img src="images/4pqimk1683207418.jpg" class="w-100" alt="food" />
+                
+              </div>
+              <h2 id="imgTitle">Dal fry</h2>
+            </div>
+          </div>
+          <div class="col-md-8 description">
+            <div class="">
+              <h2>Instructions</h2>
+              <p>Preheat the oven to 150C/300F/Gas 2. Toss the beef and flour together in a bowl with some salt and
+                black pepper. Heat a large casserole until hot, add half of the rapeseed oil and enough of the beef to
+                just cover the bottom of the casserole. Fry until browned on each side, then remove and set aside.
+                Repeat with the remaining oil and beef. Return the beef to the pan, add the wine and cook until the
+                volume of liquid has reduced by half, then add the stock, onion, carrots, thyme and mustard, and season
+                well with salt and pepper. Cover with a lid and place in the oven for two hours. Remove from the oven,
+                check the seasoning and set aside to cool. Remove the thyme. When the beef is cool and you're ready to
+                assemble the pie, preheat the oven to 200C/400F/Gas 6. Transfer the beef to a pie dish, brush the rim
+                with the beaten egg yolks and lay the pastry over the top. Brush the top of the pastry with more beaten
+                egg. Trim the pastry so there is just enough excess to crimp the edges, then place in the oven and bake
+                for 30 minutes, or until the pastry is golden-brown and cooked through. For the green beans, bring a
+                saucepan of salted water to the boil, add the beans and cook for 4-5 minutes, or until just tender.
+                Drain and toss with the butter, then season with black pepper. To serve, place a large spoonful of pie
+                onto each plate with some green beans alongside.</p>
+              <h3 class="area"></h3>
+              <h3 class="category"></h3>
+              <h3 class="mb-2">Recipes :</h3>
+              <div class="ps-2   Recipes d-flex flex-wrap gap-3 text-black align-content-start ">
+                <span class="alert alert-info p-1 m-0   text-black align-self-start">1kg Beef</span>
+                <span class="alert alert-info p-1 m-0  text-black align-self-start">1kg Beef</span>
+                <span class="alert alert-info p-1 m-0   text-black align-self-start">1kg Beef</span>
+                <span class="alert alert-info p-1 m-0  text-black align-self-start">1kg Beef</span>
+                <span class="alert alert-info p-1 m-0   text-black align-self-start">1kg Beef</span>
+                <span class="alert alert-info p-1 m-0  text-black align-self-start">1kg Beef</span>
+                <span class="alert alert-info p-1 m-0   text-black align-self-start">1kg Beef</span>
+                <span class="alert alert-info p-1 m-0  text-black align-self-start">1kg Beef</span>
+              </div>
+
+              <h3 class="pt-3">Tags :</h3>
+              <div class="ps-2 tags d-flex flex-wrap gap-3 text-black align-content-start  ">
+                <span class="alert alert-danger p-1 m-0  text-black align-self-start">1kg Beef</span>
+                <span class="alert alert-danger p-1 m-0 text-black align-self-start">1kg Beef</span>
+              </div>
+
+              <div class="  my-btns d-flex gap-1 pt-3 ps-1 ">
+                <a target="_blank" class="btn btn-success text-white text-decoration-none" href="">
+                  Source</a>
+
+                <a target="_blank" class="btn btn-danger text-white text-decoration-none" href="">
+                  Youtube</a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+      <!-- ==================== End Meal Deatils ========================  -->
+
+      <div class="loading position-fixed  justify-content-center align-items-center bg-black min-vh-100">
+        <span>
+          <i class="fa fa-spinner fa-spin fa-5x"></i>
+        </span>
+      </div>
+
+
+    </div>
+
+  </main>
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/index.js"></script>
+</body>
+
+</html>

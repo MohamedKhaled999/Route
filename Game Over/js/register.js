@@ -96,44 +96,5 @@ async function sendRegisteForm(user) {
   }
 }
 
-function isValid(ele) {
-  console.log(ele);
-  var regex;
-
-  switch (ele.id) {
-    case "fName":
-    case "lName":
-      regex =
-        /^(?:[a-zA-Z0-9\s@,=%$#&_\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDCF\uFDF0-\uFDFF\uFE70-\uFEFF]|(?:\uD802[\uDE60-\uDE9F]|\uD83B[\uDE00-\uDEFF])){2,20}$/;
-      break;
-
-    case "email":
-      regex =
-        /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-      break;
-
-    case "pass":
-      regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-      break;
-    case "age":
-      regex = /^([1-7][0-9]|80)$/;
-      break;
-  }
-
-  console.log(regex);
-  console.log(ele.value);
-  if (regex.test(ele.value)) {
-    ele.classList.add("is-valid");
-    ele.classList.remove("is-invalid");
-
-    return true;
-  } else {
-    ele.classList.add("is-invalid");
-    ele.classList.remove("is-valid");
-    console.log(ele, "is bad");
-
-    return false;
-  }
-}
 
 //*===========================Validation======================>
