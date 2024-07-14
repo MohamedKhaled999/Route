@@ -124,13 +124,13 @@ const openNav = () => {
   $(".open-close-icon").addClass("fa-x");
   $("aside .content li").each((index, ele) => {
     // console.log(index, ele);
-    $(ele).animate({ top: 0, left: 0 }, (5.5 + index) * 100);
+    $(ele).animate({ top: 0, left: 0 }, (5 + index) * 100);
   });
 };
  export const closeNav = () => {
   let currentWidth = $("aside .content").outerWidth(true);
   aside.animate({ left: -currentWidth }, 500);
-  $("aside .content li").animate({ top: "300%" }, 1000);
+  $("aside .content li").animate({ top: 300  }, 1000);
 
   $(".open-close-icon").addClass("fa-align-justify");
   $(".open-close-icon").removeClass("fa-x");
