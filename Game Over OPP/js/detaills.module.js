@@ -39,7 +39,6 @@ export class Details {
     let gameVideo = mediaContainer.find("video").html("");
     gameVideo.trigger("load");
 
-
     // let loading = $("#loading");
     $("#details-page").fadeOut(500);
     $("#home-page").fadeIn(1000);
