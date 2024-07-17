@@ -92,15 +92,30 @@ export class UI {
       console.log(temp);
       gameContainer.find("#minialContainer").html(temp);
     }
-    let gameVideo = mediaContainer.find("video");
-    gameVideo.attr("poster", data.thumbnail);
-    gameVideo.html(`  <source
-                      src="${data.thumbnail.replace(
-                        "thumbnail.jpg",
-                        "videoplayback.webm"
-                      )}"
-                      type="video/mp4"
-                    />`);
+    // let gameVideo = mediaContainer.find("video");
+    let vedioContainer = mediaContainer.children().eq(0);
+    vedioContainer.html(`
+<video
+                    autoplay
+                    loop
+                    class="position-absolute top-0 h-100 w-100"
+                    style="object-fit: cover; z-index: 1"
+                    poster="${data.thumbnail}"
+                    muted
+                  >
+                    <source src="${data.thumbnail.replace(
+                      "thumbnail.jpg",
+                      "videoplayback.webm"
+                    )}" type="video/mp4" />
+                  </video>
+                  <img
+                    src="https://www.freetogame.com/g/11/Neverwinter-2.jpg"
+                    class="w-100 rounded-top object-fit-cover opacity-100"
+                    alt="game thumbnail"
+                  />
+
+      `);
+
 
     mediaContainer.find("img").attr("src", data.thumbnail);
 
