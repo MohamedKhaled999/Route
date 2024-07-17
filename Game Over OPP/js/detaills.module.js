@@ -27,14 +27,7 @@ export class Details {
 
       const data = await api.json();
       let ui = new UI();
-      // gameVideo.trigger("pause");
-
-      ui.displayDetaills(data);
-      
-      // gameVideo.trigger("load");
-      // gameVideo.trigger("play");
-
-
+      await ui.displayDetaills(data);
     } catch (error) {
       console.log(error);
       myModal.show();
@@ -43,8 +36,7 @@ export class Details {
 
   closeDetails() {
     const mediaContainer = $("#details-page #media");
-    let gameVideo = mediaContainer.find("video");
-    gameVideo.html("");
+    let gameVideo = mediaContainer.find("video").html("");
     gameVideo.trigger("load");
 
 

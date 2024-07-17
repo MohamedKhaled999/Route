@@ -102,10 +102,6 @@ export class UI {
                       type="video/mp4"
                     />`);
 
-                    gameVideo.trigger("play");
-                    gameVideo.attr("autoplay",true)
-                    
-
     mediaContainer.find("img").attr("src", data.thumbnail);
 
     mediaContainer.find("a").attr("href", data.game_url);
