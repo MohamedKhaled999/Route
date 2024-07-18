@@ -82,6 +82,6 @@ export class Game {
     let details = new Details(id);
     loading.hide(500);
     $("#details-page").fadeIn(2000);
-    
+    ("");
   }
 }
