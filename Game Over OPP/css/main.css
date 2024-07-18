@@ -1,0 +1,232 @@
+/***** theme customize *****/
+[data-theme="dark"] {
+    --main-color: #272b30;
+    --seconde-color: #32383e;
+    --modal-color: #32383e;
+    --color-text: #fff;
+    --btn-main-color: #272729;
+
+}
+
+[data-theme="light"] {
+    --main-color: #eeeeee;
+    --seconde-color: #909396;
+    --color-text: #000;
+    --btn-main-color: #414550;
+    --modal-color: #fff;
+}
+
+main button.btn {
+    background-color: var(--btn-main-color);
+    font-weight: 800;
+    color: var(--color-text);
+
+}
+
+main button.btn:hover {
+    background: linear-gradient(rgb(0 0 0 / 0.1), rgb(0 0 0 / 0.25));
+
+}
+
+/* 
+.form-control,
+.form-control:focus {
+    background-color: var(--main-color);
+    color: var(--color-text);
+    border-color: var(--seconde-color);
+}
+
+.form-control::placeholder {
+    color: var(--color-text);
+}
+ */
+
+
+.badge-color {
+    background-color: var(--seconde-color);
+}
+
+.modal-color {
+    background-color: var(--modal-color);
+}
+
+/***** End theme customize *****/
+
+
+body {
+    font-family: "Comfortaa", cursive;
+    color: var(--color-text);
+    background-color: var(--main-color);
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Nerko One", cursive;
+    color: var(--color-text);
+}
+
+a,
+p,
+span {
+    color: inherit !important;
+}
+
+/* .login-area,
+.register-area {
+    background-color: rgb(255 255 255 / 0.1) !important;
+    backdrop-filter: blur(5px);
+} */
+
+
+* {
+    transition: background-color 0.5s, color 0.2s;
+}
+
+.circles span {
+    width: 20px;
+    height: 20px;
+    background-color: var(--main-color);
+    border: #474848 1px solid;
+
+
+}
+
+.circles span:nth-child(1) {
+    background-color: var(--btn-main-color);
+
+
+}
+
+.circles span:nth-child(3) {
+    background-color: var(--seconde-color);
+
+
+}
+
+/* ***************** end Global******************* */
+
+
+/**** Start Home ******/
+nav {
+    z-index: 5;
+    box-shadow: 0 0 8px black;
+
+    margin-top: -30px;
+    top: -50%;
+}
+
+.nav-bg {
+    /* background-color: var(--main-color); */
+    background-color: #3A497B;
+
+}
+
+.nav-item .nav-link {
+    font-size: 11px;
+}
+
+.nav-item .nav-link.active,
+.nav-item .nav-link:hover {
+    color: #09c !important;
+    transition: color 0.5s;
+}
+
+header {
+    background-image: url(../images/wraper.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    min-height: 30vh;
+}
+
+
+.highlight-badge {
+
+    background-color: rgba(13, 110, 253, 1);
+    color: #fff !important;
+
+}
+
+/* .highlight-badge:hover{
+    
+    background-color: rgba(13, 110, 253,1);
+    color: #fff !important;
+    transition: all 0.4s;
+ } */
+main .card {
+    filter: grayscale(0.7);
+    transition: transform 0.5s, filter 0.5s 0.1s;
+}
+
+main .card:hover {
+    transform: scale(1.05);
+    filter: grayscale(0);
+}
+
+.card-footer span {
+    font-size: 10px;
+}
+
+#loading {
+    z-index: 9999;
+    display: flex;
+
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border-left: 4px solid #FF3D00;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        
+    }
+}
+
+/**** End Home ******/
+#home-page{
+    overflow: hidden;
+    background-image: linear-gradient( to left, 0% rgba(39, 39, 41, 0.3),100% rgba(13, 13, 13, 0.3));
+    /* background-image: linear-gradient(to right, red , yellow); */
+
+}
+
+/**** Start Details ******/
+.details {
+    /* background-color: #272729cc !important; */
+    display: none;
+
+}
+
+/**** End Details ******/
