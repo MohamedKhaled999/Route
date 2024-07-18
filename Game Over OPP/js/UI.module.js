@@ -21,7 +21,7 @@ export class UI {
                       <img
                         src="${game.thumbnail}"
                         class="w-100 rounded-top object-fit-cover"
-                        alt="game thumbnail "
+                        alt="game thumbnail"
                       />
                      </div>
                       <div class="hstack justify-content-between">
@@ -74,7 +74,7 @@ export class UI {
       .html(`${data.title} Screenshots`);
     gameContainer.find("img").each((index, image) => {
       console.log(index, image);
-      image.src = `${data.screenshots[index].image}`;
+      image.src = `${data.screenshots[index]?.image}`;
     });
 
     console.log(!!data.minimum_system_requirements);
@@ -101,6 +101,13 @@ export class UI {
                       )}"
                       type="video/mp4"
                     />`);
+
+
+
+//  gameVideo.trigger("load");
+   gameVideo.trigger("play");
+
+                    
 
     mediaContainer.find("img").attr("src", data.thumbnail);
 
