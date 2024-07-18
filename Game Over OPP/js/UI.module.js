@@ -23,6 +23,7 @@ export class UI {
                         class="w-100 rounded-top object-fit-cover"
                         alt="game thumbnail"
                       />
+                     
                      </div>
                       <div class="hstack justify-content-between">
                         <h3 class="fs-5">${game.title}</h3>
